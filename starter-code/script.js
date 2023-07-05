@@ -3,4 +3,5 @@ const btn = document.querySelector('.nav__open');
 
 btn.addEventListener('click', e => {
   nav.classList.toggle('active');
+  btn.classList.toggle('close');
 });
