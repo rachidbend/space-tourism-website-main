@@ -1,0 +1,47 @@
+.body {
+  background-image: url('starter-code/assets/home/background-home-mobile.jpg');
+}
+
+.hero {
+  padding: 2.4rem;
+  padding-bottom: 0;
+  margin-bottom: 8.7rem;
+  text-align: center;
+}
+
+.explore {
+  text-align: center;
+}
+
+.link--explore {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--color-blue-dark);
+  text-transform: uppercase;
+  font-family: 'Bellefair', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.125rem;
+  background-color: var(--color-white);
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+}
+
+.link--explore::before {
+  content: '';
+  position: absolute;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 50%;
+  background-color: var(--color-gray);
+  transform: scale(40%);
+  transition: transform 300ms ease-in-out;
+  z-index: -1;
+}
+
+.link--explore:hover::before {
+  transform: scale(100%);
+}
