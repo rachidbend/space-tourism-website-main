@@ -149,13 +149,13 @@ img {
   transition: 300ms ease-in-out;
 }
 .close .nav__open--bar-1 {
-  transform: rotateZ(-45deg) translate(-6px, 7px);
+  transform: rotateZ(-45deg) translate(-5.5px, 6px);
 }
 .close .nav__open--bar-2 {
   opacity: 0;
 }
 .close .nav__open--bar-3 {
-  transform: rotateZ(45deg) translate(-6px, -6px);
+  transform: rotateZ(45deg) translate(-7px, -7px);
 }
 
 .link__active {
