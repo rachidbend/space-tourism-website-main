@@ -121,7 +121,7 @@ img {
   line-height: 1.26;
   letter-spacing: 0;
 }
-.heading--secondary {
+.heading--fifth {
   font-size: 1.6rem;
   text-transform: uppercase;
   font-family: 'Barlow Condensed', sans-serif;
@@ -159,4 +159,11 @@ img {
 
 .link__active {
   border-right: 0.3rem solid var(--color-white);
+}
+
+.heading--secondary {
+  font-family: 'Bellefair', serif;
+  text-transform: uppercase;
+  font-size: 5.6rem;
+  font-weight: 400;
 }

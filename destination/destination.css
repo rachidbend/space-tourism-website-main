@@ -1,3 +1,53 @@
 .body {
   background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
 }
+
+.hero {
+  padding: 2.4rem;
+  padding-bottom: 0;
+  margin-bottom: 8.7rem;
+  text-align: center;
+}
+.heading--fifth {
+  color: var(--color-white);
+  margin-bottom: 3.2rem;
+}
+.heading--number {
+  opacity: 0.25;
+}
+.planet__img {
+  width: 15rem;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 2.6rem;
+}
+.planet__choose {
+}
+.planet__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2.6rem;
+  margin-bottom: 3.1rem;
+}
+.planet__item {
+}
+.planet__link {
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.236rem;
+  padding-bottom: 1.1rem;
+}
+#moon {
+  border-bottom: 3px solid var(--color-white);
+}
+.palnet__description {
+}
+.planet__text {
+  font-family: 'Barlow', serif;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
