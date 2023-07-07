@@ -1,5 +1,6 @@
 .body {
   background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
+  min-height: 100dvh;
 }
 
 .hero {
