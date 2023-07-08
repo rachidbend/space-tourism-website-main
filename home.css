@@ -4,8 +4,8 @@
 
 .hero {
   padding: 2.4rem;
-  padding-bottom: 0;
-  margin-bottom: 8.7rem;
+  /* padding-bottom: 0; */
+  padding-bottom: 4rem;
   text-align: center;
 }
 
@@ -52,12 +52,6 @@
   min-height: 100vh;
 }
 
-.hero {
-  padding: 2.4rem;
-  padding-bottom: 0;
-  margin-bottom: 8.7rem;
-  text-align: center;
-}
 .heading--fifth {
   color: var(--color-white);
   margin-bottom: 3.2rem;

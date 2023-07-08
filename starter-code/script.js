@@ -2,8 +2,11 @@ const allNav = document.querySelectorAll('.nav');
 const allBtn = document.querySelectorAll('.nav__open');
 
 allBtn?.forEach(btn => {
+  // get all the nav links, and if one of them is clicked
   btn?.addEventListener('click', e => {
+    // we activate the nav to open
     allNav.forEach(nav => nav.classList.toggle('active'));
+    // then change the burger menu to close
     allBtn.forEach(btn => btn.classList.toggle('close'));
   });
 });
@@ -13,7 +16,6 @@ const homePageLink = document.querySelector('.link--home');
 const destinationPageLink = document.querySelector('.link--destination');
 const crewPageLink = document.querySelector('.link--crew');
 const technologyPageLink = document.querySelector('.link--technology');
-
 const linkBtn = document.querySelectorAll('.nav__link');
 // 2- when a link is cicked, the designated page for it should be shown
 // get all the links and add an eventListener to all of them
@@ -53,8 +55,8 @@ linkBtn.forEach(link => {
         setTimeout(() => {
           document.querySelector('.body').classList.remove('fadein');
           // close the nav at the end
-          allNav.forEach(nav => nav.classList.toggle('active'));
-          allBtn.forEach(btn => btn.classList.toggle('close'));
+          allNav.forEach(nav => nav.classList.remove('active'));
+          allBtn.forEach(btn => btn.classList.remove('close'));
         }, 1500);
       }, 1500);
     }, 100);
