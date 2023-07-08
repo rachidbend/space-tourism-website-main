@@ -30,7 +30,7 @@ linkBtn.forEach(link => {
       .querySelectorAll(`.${btnclicked.classList[1]}`)
       .forEach(activeLink => activeLink.classList.add('link__active'));
     // get which btn is clicked
-    const linkClicked = btnclicked.classList[1].split('--')[1];
+    const linkClicked = btnclicked.classList[1]?.split('--')[1];
 
     // get all pages
     const allPages = document.querySelectorAll('.page');
@@ -52,8 +52,11 @@ linkBtn.forEach(link => {
         // wait a bit, then remove the fade in class to be ready for next transition
         setTimeout(() => {
           document.querySelector('.body').classList.remove('fadein');
-        }, 2000);
-      }, 2000);
+          // close the nav at the end
+          allNav.forEach(nav => nav.classList.toggle('active'));
+          allBtn.forEach(btn => btn.classList.toggle('close'));
+        }, 1500);
+      }, 1500);
     }, 100);
   });
 });

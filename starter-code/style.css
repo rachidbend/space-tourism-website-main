@@ -174,7 +174,7 @@ img {
 .body::after {
   content: '';
   position: absolute;
-  background-color: #252731;
+  background-color: #0b0f1a;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -186,12 +186,14 @@ img {
 }
 
 .animate_content::after {
-  animation: animate 2s ease;
-  width: 100vh;
+  animation: animate 1400ms ease;
+  width: 110vw;
   height: 100vh;
   opacity: 1;
   border-radius: 0;
+  overflow: hidden;
 }
+
 .body {
   overflow-x: hidden;
 }
@@ -219,35 +221,36 @@ img {
   }
 
   85% {
-    width: 100vh;
+    width: 110vw;
     height: 100vh;
     border-radius: 0;
   }
 
   100% {
+    width: 110vw;
     height: 100vh;
-    width: 100vw;
     border-radius: 0;
   }
 }
 
 .fadein::after {
-  animation: fadein 2s ease;
+  animation: fadein 1400ms ease;
   width: 0.2rem;
   height: 0.2rem;
   opacity: 0;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 @keyframes fadein {
   0% {
+    width: 110vw;
     height: 100vh;
-    width: 100vw;
     border-radius: 0;
     opacity: 1;
   }
   15% {
-    width: 100vh;
+    width: 110vw;
     height: 100vh;
     border-radius: 0;
   }
