@@ -17,6 +17,7 @@ const technologyPageLink = document.querySelector('.link--technology');
 const linkBtn = document.querySelectorAll('.nav__link');
 // 2- when a link is cicked, the designated page for it should be shown
 // get all the links and add an eventListener to all of them
+// 3- and the other pages should be hidden
 linkBtn.forEach(link => {
   link.addEventListener('click', e => {
     // get each btn or link
@@ -35,10 +36,39 @@ linkBtn.forEach(link => {
     const allPages = document.querySelectorAll('.page');
     // then get the page to be showed next
     const nextPage = document.querySelector(`.page--${linkClicked}`);
-    // hide all pages
-    allPages.forEach(page => page.classList.add('hide'));
-    // show only the page requested
-    nextPage.classList.remove('hide');
+
+    setTimeout(() => {
+      // start the animation for the transition
+      document.querySelector('.body').classList.add('animate_content');
+      // wait a bit then start the transition to fadin the content
+      setTimeout(() => {
+        document.querySelector('.body').classList.add('fadein');
+        // hide all pages
+        allPages.forEach(page => page.classList.add('hide'));
+        // show only the page requested
+        nextPage.classList.remove('hide');
+        // after fade in remove the animation
+        document.querySelector('.body').classList.remove('animate_content');
+        // wait a bit, then remove the fade in class to be ready for next transition
+        setTimeout(() => {
+          document.querySelector('.body').classList.remove('fadein');
+        }, 2000);
+      }, 2000);
+    }, 100);
   });
 });
-// 3- and the other pages should be hidden
+
+// setTimeout(() => {
+//   // start the animation for the transition
+//   document.querySelector('.body').classList.add('animate_content');
+//   // wait a bit then start the transition to fadin the content
+//   setTimeout(() => {
+//     document.querySelector('.body').classList.add('fadein');
+//     // after fade in remove the animation
+//     document.querySelector('.body').classList.remove('animate_content');
+//     // wait a bit, then remove the fade in class to be ready for next transition
+//     setTimeout(() => {
+//       document.querySelector('.body').classList.remove('fadein');
+//     }, 2000);
+//   }, 2000);
+// }, 2000);
