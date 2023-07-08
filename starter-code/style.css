@@ -24,7 +24,9 @@ font-family: 'Barlow', serif;
   --color-gray: #252731;
 }
 
-* {
+*,
+::before,
+::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -46,7 +48,7 @@ img {
   width: 100%;
 }
 
-.body {
+.page {
   position: relative;
 
   background-repeat: no-repeat;
