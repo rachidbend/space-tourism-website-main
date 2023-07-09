@@ -28,6 +28,7 @@
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
+  z-index: 100;
 }
 
 .link--explore::before {
@@ -36,10 +37,11 @@
   height: 24rem;
   width: 24rem;
   border-radius: 50%;
-  background-color: var(--color-gray);
+  background-color: var(--color-white);
   transform: scale(40%);
+  opacity: 0.1;
   transition: transform 300ms ease-in-out;
-  z-index: -1;
+  z-index: 99;
 }
 
 .link--explore:hover::before {
@@ -47,6 +49,7 @@
 }
 
 /* destination styles */
+/* 
 .page--destination {
   background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
   min-height: 100vh;
@@ -115,7 +118,7 @@
   text-transform: uppercase;
   color: var(--color-white);
   margin-bottom: 3.2rem;
-}
+} */
 
 .hide {
   display: none;

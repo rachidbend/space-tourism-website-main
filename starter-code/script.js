@@ -48,7 +48,7 @@ linkBtn.forEach(link => {
         // hide all pages
         allPages.forEach(page => page.classList.add('hide'));
         // show only the page requested
-        nextPage.classList.remove('hide');
+        nextPage?.classList.remove('hide');
         // after fade in remove the animation
         document.querySelector('.body').classList.remove('animate_content');
         // wait a bit, then remove the fade in class to be ready for next transition

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Bellefair';
   src: url('assets/Fonts/Bellefair/Bellefair-Regular.ttf');
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'Barlow';
   src: url('assets/Fonts/Barlow/Barlow-Regular.ttf');
-}
+} */
 /* 
 font-family: 'Barlow Condensed', sans-serif;
 font-family: 'Bellefair', serif; 
@@ -21,7 +21,7 @@ font-family: 'Barlow', serif;
   --color-white: #ffffff;
   --color-blue-light: #d2d8f9;
   --color-blue-dark: #0c0e18;
-  --color-gray: #252731;
+  --color-gray: #979797;
 }
 
 *,
