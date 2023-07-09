@@ -1,5 +1,7 @@
 .page--home {
   background-image: url('starter-code/assets/home/background-home-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero {

@@ -1,0 +1,70 @@
+.page--technology {
+  background-image: url('../starter-code/assets/technology/background-technology-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.technology__img {
+  margin: 0 -2.6rem;
+  margin-bottom: 3.4rem;
+  object-fit: cover;
+}
+
+.technology__img img {
+  /* width: 101%; */
+}
+
+/* to make sure the image doesn't overflow and make the page wider */
+.hero {
+  overflow-x: hidden;
+}
+
+.technology__choose {
+  display: flex;
+  justify-content: center;
+  gap: 2.6rem;
+  margin-bottom: 2.6rem;
+}
+
+.dot {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 0.1rem solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-family: 'Bellefair', sans-serif;
+  font-weight: 400;
+  color: var(--color-white);
+  transition: border-color 250ms ease-in-out;
+}
+
+.dot:hover {
+  border-color: var(--color-white);
+}
+
+.dot--active {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: #000;
+}
+
+.heading--sixth {
+  font-size: 1.4rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.236rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-blue-light);
+  margin-bottom: 0.9rem;
+}
+
+.technology__text {
+  font-family: 'Barlow', serif;
+  font-size: 1.5rem;
+  color: var(--color-blue-light);
+  letter-spacing: 0;
+  line-height: 2.5rem;
+}
