@@ -1,7 +1,7 @@
 .page--technology {
   background-image: url('../starter-code/assets/technology/background-technology-mobile.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
 }
 
 .technology__img {
