@@ -135,7 +135,7 @@ img {
 }
 
 .nav__open {
-  z-index: 999;
+  z-index: 2000;
   width: 2.4rem;
   height: 2.1rem;
   display: flex;
