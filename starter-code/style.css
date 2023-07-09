@@ -192,7 +192,7 @@ img {
 
 .animate_content::after {
   animation: animate 1400ms ease;
-  width: 110vw;
+  width: 101vw;
   height: 100vh;
   opacity: 1;
   border-radius: 0;
@@ -221,18 +221,18 @@ img {
   } */
 
   50% {
-    width: 50rem;
+    width: 100vw;
     height: 0.4rem;
   }
 
   85% {
-    width: 110vw;
+    width: 100vw;
     height: 100vh;
     border-radius: 0;
   }
 
   100% {
-    width: 110vw;
+    width: 100vw;
     height: 100vh;
     border-radius: 0;
   }
@@ -249,19 +249,19 @@ img {
 
 @keyframes fadein {
   0% {
-    width: 110vw;
+    width: 100vw;
     height: 100vh;
     border-radius: 0;
     opacity: 1;
   }
   15% {
-    width: 110vw;
+    width: 100vw;
     height: 100vh;
     border-radius: 0;
   }
 
   50% {
-    width: 50rem;
+    width: 100vw;
     height: 0.4rem;
   }
 
