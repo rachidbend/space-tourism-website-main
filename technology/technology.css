@@ -26,7 +26,7 @@
   margin-bottom: 2.6rem;
 }
 
-.dot {
+.page--technology .dot {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
@@ -41,11 +41,11 @@
   transition: border-color 250ms ease-in-out;
 }
 
-.dot:hover {
+.page--technology .dot:hover {
   border-color: var(--color-white);
 }
 
-.dot--active {
+.page--technology .dot--active {
   background-color: var(--color-white);
   border-color: var(--color-white);
   color: #000;

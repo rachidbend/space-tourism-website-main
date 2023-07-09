@@ -50,12 +50,12 @@
   justify-content: center;
   margin-bottom: 3.2rem;
 }
-.dot {
+.page--crew .dot {
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
   background-color: #979797;
 }
-.dot--active {
+.page--crew .dot--active {
   background-color: var(--color-white);
 }
