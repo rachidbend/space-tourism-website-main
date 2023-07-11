@@ -15,6 +15,20 @@ allBtn?.forEach(btn => {
   });
 });
 
+// this code is meant to close the nav if the outside of the nav is clicked
+// //  if the nav is open
+// const bodyEl = document.querySelector('.body');
+// bodyEl.addEventListener('click', e => {
+//   const targetEl = e.target;
+//   console.log(targetEl);
+//   if (targetEl.classList[0] === 'nav') {
+//     console.log('nav is clicked');
+//   }
+//   console.log(targetEl.classList.contains('nav'));
+// });
+// // and you click anywhere other than the nav,
+// // the nav closes
+
 // Get the page links
 const homePageLink = document.querySelector('.link--home');
 const destinationPageLink = document.querySelector('.link--destination');
@@ -90,5 +104,73 @@ linkBtn.forEach(link => {
     activeLink.forEach(activeLink => activeLink.classList.add('link__active'));
 
     transitionAnimation(nextPage);
+  });
+});
+
+// planet carousel
+
+// get controls
+const allPlanetCtrl = document.querySelectorAll('.planet__link');
+const allPlanetImages = document.querySelectorAll('.planet__images');
+const allPlanetDescriptions = document.querySelectorAll(
+  '.palnet__description '
+);
+const allPlanetInformation = document.querySelectorAll('.planet__info');
+
+const allPlanetLinks = document.querySelectorAll('.planet__link');
+
+allPlanetCtrl.forEach(ctrl => {
+  ctrl.addEventListener('click', e => {
+    e.preventDefault();
+    //  when a ctrl is clicked,
+    const targetEl = e.target;
+    // figure out wich control it is
+    const getClass = targetEl.classList[1];
+
+    allPlanetLinks.forEach(link => {
+      link.classList.remove('planet--active');
+    });
+    document.querySelector(`.${getClass}`).classList.add('planet--active');
+    // show the appropriate:
+    // 1- IMAGES
+    // remove the active class
+    allPlanetImages.forEach(img => {
+      img.classList.add('planet__fadeout');
+      setTimeout(() => {
+        img.classList.remove('planet__images--active');
+        img.classList.remove('planet__fadeout');
+        document
+          .querySelector(`.planet__image--${getClass}`)
+          .classList.add('planet__images--active');
+      }, 400);
+    });
+    // and put it on the appropriate image
+    // document
+    //   .querySelector(`.planet__image--${getClass}`)
+    //   .classList.add('planet__images--active');
+
+    // 2- DESCRIPTIONS
+    allPlanetDescriptions.forEach(desc => {
+      desc.classList.add('planet__fadeout');
+      setTimeout(() => {
+        desc.classList.remove('palnet__description--active');
+        desc.classList.remove('planet__fadeout');
+        document
+          .querySelector(`.palnet__description--${getClass}`)
+          .classList.add('palnet__description--active');
+      }, 400);
+    });
+
+    // 3- INFORMATION
+    allPlanetInformation.forEach(info => {
+      info.classList.add('planet__fadeout');
+      setTimeout(() => {
+        info.classList.remove('planet__info--active');
+        info.classList.remove('planet__fadeout');
+        document
+          .querySelector(`.planet__info--${getClass}`)
+          .classList.add('planet__info--active');
+      }, 400);
+    });
   });
 });

@@ -125,30 +125,51 @@
           <span class="heading--number">01</span> pick your destination
         </h5>
         <div class="planet">
-          <div class="planet__img">
+          <div class="planet__img carousel-planet">
             <img
-              src="../starter-code/assets/destination/image-moon.png"
-              alt=""
-              class="planet__image--moon"
+              src="starter-code/assets/destination/image-moon.png"
+              alt="image of the moon"
+              class="planet__image--moon planet__images planet__images--active"
+            />
+            <img
+              src="starter-code/assets/destination/image-mars.png"
+              alt="image of mars"
+              class="planet__image--mars planet__images"
+            />
+            <img
+              src="starter-code/assets/destination/image-europa.png"
+              alt="image of europa"
+              class="planet__image--europa planet__images"
+            />
+            <img
+              src="starter-code/assets/destination/image-titan.png"
+              alt="image of titan"
+              class="planet__image--titan planet__images"
             />
           </div>
+          <!-- planet carousel controls -->
           <div class="planet__choose">
             <ul class="planet__list">
               <li class="planet__item">
-                <a href="#" class="planet__link" id="moon">Moon</a>
+                <a href="#" class="planet__link moon planet--active">Moon</a>
               </li>
               <li class="planet__item">
-                <a href="#" class="planet__link" id="mars">mars</a>
+                <a href="#" class="planet__link mars">mars</a>
               </li>
               <li class="planet__item">
-                <a href="#" class="planet__link" id="europa">europa</a>
+                <a href="#" class="planet__link europa">europa</a>
               </li>
               <li class="planet__item">
-                <a href="#" class="planet__link" id="titan">titan</a>
+                <a href="#" class="planet__link titan">titan</a>
               </li>
             </ul>
           </div>
-          <div class="palnet__description">
+
+          <!-- PLANET DESCRIPTIONs -->
+          <!-- moon description -->
+          <div
+            class="palnet__description palnet__description--moon palnet__description--active"
+          >
             <h2 class="heading heading--secondary planet__name">Moon</h2>
             <p class="planet__text">
               See our planet as you’ve never seen it before. A perfect relaxing
@@ -157,12 +178,71 @@
               and Apollo 11 landing sites.
             </p>
           </div>
-          <div class="planet__info">
+          <!-- mars description -->
+          <div class="palnet__description palnet__description--mars">
+            <h2 class="heading heading--secondary planet__name">Mars</h2>
+            <p class="planet__text">
+              Don’t forget to pack your hiking boots. You’ll need them to tackle
+              Olympus Mons, the tallest planetary mountain in our solar system.
+              It’s two and a half times the size of Everest!
+            </p>
+          </div>
+          <!-- europa description -->
+          <div class="palnet__description palnet__description--europa">
+            <h2 class="heading heading--secondary planet__name">europa</h2>
+            <p class="planet__text">
+              The smallest of the four Galilean moons orbiting Jupiter, Europa
+              is a winter lover’s dream. With an icy surface, it’s perfect for a
+              bit of ice skating, curling, hockey, or simple relaxation in your
+              snug wintery cabin.
+            </p>
+          </div>
+          <!-- europa description -->
+          <div class="palnet__description palnet__description--titan">
+            <h2 class="heading heading--secondary planet__name">titan</h2>
+            <p class="planet__text">
+              The only moon known to have a dense atmosphere other than Earth,
+              Titan is a home away from home (just a few hundred degrees
+              colder!). As a bonus, you get striking views of the Rings of
+              Saturn.
+            </p>
+          </div>
+
+          <!-- PLANET INFORMATIONS -->
+          <!-- moon information -->
+          <div class="planet__info planet__info--moon planet__info--active">
             <h6 class="avr-distance-label">avg. distance</h6>
             <p class="avr-distance">384,400 km</p>
 
             <h6 class="est-time-label">est. travel time</h6>
             <p class="est-time">3 days</p>
+          </div>
+
+          <!-- mars information -->
+          <div class="planet__info planet__info--mars">
+            <h6 class="avr-distance-label">avg. distance</h6>
+            <p class="avr-distance">225 MIL. km</p>
+
+            <h6 class="est-time-label">est. travel time</h6>
+            <p class="est-time">9 months</p>
+          </div>
+
+          <!-- europa information -->
+          <div class="planet__info planet__info--europa">
+            <h6 class="avr-distance-label">avg. distance</h6>
+            <p class="avr-distance">628 MIL. km</p>
+
+            <h6 class="est-time-label">est. travel time</h6>
+            <p class="est-time">3 years</p>
+          </div>
+
+          <!-- titan information -->
+          <div class="planet__info planet__info--titan">
+            <h6 class="avr-distance-label">avg. distance</h6>
+            <p class="avr-distance">1.6 BIL. km</p>
+
+            <h6 class="est-time-label">est. travel time</h6>
+            <p class="est-time">7 years</p>
           </div>
         </div>
       </main>
