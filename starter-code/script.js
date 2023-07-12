@@ -119,6 +119,13 @@ const allPlanetInformation = document.querySelectorAll('.planet__info');
 
 const allPlanetLinks = document.querySelectorAll('.planet__link');
 
+// document.querySelector('.planet__images--active').style.display = 'inline-block';
+document.querySelector('.planet__images--active').style.display =
+  'inline-block';
+document.querySelector('.palnet__description--active').style.display =
+  'inline-block';
+document.querySelector('.planet__info--active').style.display = 'inline-block';
+
 allPlanetCtrl.forEach(ctrl => {
   ctrl.addEventListener('click', e => {
     e.preventDefault();
@@ -142,7 +149,8 @@ allPlanetCtrl.forEach(ctrl => {
         document
           .querySelector(`.planet__image--${getClass}`)
           .classList.add('planet__images--active');
-      }, 400);
+        img.style.display = 'inline-block';
+      }, 450);
     });
     // and put it on the appropriate image
     // document
@@ -158,7 +166,8 @@ allPlanetCtrl.forEach(ctrl => {
         document
           .querySelector(`.palnet__description--${getClass}`)
           .classList.add('palnet__description--active');
-      }, 400);
+        desc.style.display = 'inline-block';
+      }, 450);
     });
 
     // 3- INFORMATION
@@ -170,6 +179,7 @@ allPlanetCtrl.forEach(ctrl => {
         document
           .querySelector(`.planet__info--${getClass}`)
           .classList.add('planet__info--active');
+        info.style.display = 'inline-block';
       }, 400);
     });
   });

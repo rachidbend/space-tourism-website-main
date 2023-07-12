@@ -7,7 +7,6 @@
 
 .page--destination {
   background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
-
   background-repeat: no-repeat;
 }
 
@@ -43,9 +42,7 @@
   letter-spacing: 0.236rem;
   padding-bottom: 1.1rem;
 }
-#moon {
-  border-bottom: 3px solid var(--color-white);
-}
+
 .palnet__description {
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
@@ -78,18 +75,20 @@
 
 .planet__images {
   height: 0;
-  width: 0;
+  /* width: 0; */
   position: absolute;
   visibility: hidden;
   opacity: 0;
   transition: opacity 400ms ease-in-out;
+  display: none;
 }
 .planet__images--active {
   visibility: visible;
   position: relative;
-  height: 15rem;
   width: 15rem;
+  height: auto;
   opacity: 1;
+  /* display: inline-block; */
 }
 
 .planet__link {
@@ -106,6 +105,7 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 400ms ease-in-out;
+  display: none;
 }
 
 .palnet__description--active {
@@ -113,6 +113,7 @@
   position: relative;
   visibility: visible;
   opacity: 1;
+  /* display: inline-block; */
 }
 
 .planet__info {
@@ -121,12 +122,14 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 400ms ease-in-out;
+  display: none;
 }
 .planet__info--active {
   height: auto;
   position: relative;
   visibility: visible;
   opacity: 1;
+  /* display: inline-block; */
 }
 
 .planet__fadeout {
