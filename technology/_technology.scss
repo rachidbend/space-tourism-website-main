@@ -1,7 +1,9 @@
+$imgpathTechnology: '/../starter-code/assets/technology/';
+
 .page--technology {
-  background-image: url('../starter-code/assets/technology/background-technology-mobile.jpg');
-  background-repeat: no-repeat;
-  /* background-size: cover; */
+  background: url(#{$imgpathTechnology}background-technology-mobile.jpg)
+    no-repeat;
+  background-size: cover;
 }
 
 .technology__img {

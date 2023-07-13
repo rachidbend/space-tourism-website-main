@@ -1,3 +1,5 @@
+'use strict';
+
 // because there are many nav componentes in each page, and because we change the intire page with the nav instead of changing the contetn and leaving the nav (which i will do anothher time) we endup having to select multiple nav elements and applying the same thing to them all to stay consistent
 
 // Get the navigation elements
@@ -14,20 +16,6 @@ allBtn?.forEach(btn => {
     allBtn.forEach(btn => btn.classList.toggle('close'));
   });
 });
-
-// this code is meant to close the nav if the outside of the nav is clicked
-// //  if the nav is open
-// const bodyEl = document.querySelector('.body');
-// bodyEl.addEventListener('click', e => {
-//   const targetEl = e.target;
-//   console.log(targetEl);
-//   if (targetEl.classList[0] === 'nav') {
-//     console.log('nav is clicked');
-//   }
-//   console.log(targetEl.classList.contains('nav'));
-// });
-// // and you click anywhere other than the nav,
-// // the nav closes
 
 // Get the page links
 const homePageLink = document.querySelector('.link--home');
@@ -154,8 +142,6 @@ allPlanetCtrl.forEach(ctrl => {
     });
     // and put it on the appropriate image
     // document
-    //   .querySelector(`.planet__image--${getClass}`)
-    //   .classList.add('planet__images--active');
 
     // 2- DESCRIPTIONS
     allPlanetDescriptions.forEach(desc => {

@@ -1,13 +1,61 @@
+$imgpath: '/starter-code/assets/home/';
+
+.page--home {
+  background: url(#{$imgpath}background-home-mobile.jpg) no-repeat;
+  background-size: cover;
+}
+
 .hero {
   padding: 2.4rem;
-  padding-bottom: 0;
-  padding-bottom: 8.7rem;
+  /* padding-bottom: 0; */
+  padding-bottom: 4rem;
   text-align: center;
 }
 
+.explore {
+  text-align: center;
+}
+
+.link--explore {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--color-blue-dark);
+  text-transform: uppercase;
+  font-family: 'Bellefair', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.125rem;
+  background-color: var(--color-white);
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.link--explore::before {
+  content: '';
+  position: absolute;
+  height: 24rem;
+  width: 24rem;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  transform: scale(40%);
+  opacity: 0.1;
+  transition: transform 300ms ease-in-out;
+  z-index: 99;
+}
+
+.link--explore:hover::before {
+  transform: scale(100%);
+}
+
+/* destination styles */
+/* 
 .page--destination {
   background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
-  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .heading--fifth {
@@ -42,7 +90,9 @@
   letter-spacing: 0.236rem;
   padding-bottom: 1.1rem;
 }
-
+#moon {
+  border-bottom: 3px solid var(--color-white);
+}
 .palnet__description {
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
@@ -71,67 +121,8 @@
   text-transform: uppercase;
   color: var(--color-white);
   margin-bottom: 3.2rem;
-}
+} */
 
-.planet__images {
-  height: 0;
-  /* width: 0; */
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 400ms ease-in-out;
+.hide {
   display: none;
-}
-.planet__images--active {
-  visibility: visible;
-  position: relative;
-  width: 15rem;
-  height: auto;
-  opacity: 1;
-  /* display: inline-block; */
-}
-
-.planet__link {
-  /* transition: 400ms ease-in-out; */
-}
-
-.planet--active {
-  border-bottom: 0.3rem solid var(--color-white);
-}
-
-.palnet__description {
-  height: 0;
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 400ms ease-in-out;
-  display: none;
-}
-
-.palnet__description--active {
-  height: auto;
-  position: relative;
-  visibility: visible;
-  opacity: 1;
-  /* display: inline-block; */
-}
-
-.planet__info {
-  height: 0;
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 400ms ease-in-out;
-  display: none;
-}
-.planet__info--active {
-  height: auto;
-  position: relative;
-  visibility: visible;
-  opacity: 1;
-  /* display: inline-block; */
-}
-
-.planet__fadeout {
-  opacity: 0;
 }
