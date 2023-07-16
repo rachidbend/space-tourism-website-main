@@ -170,3 +170,50 @@ allPlanetCtrl.forEach(ctrl => {
     });
   });
 });
+
+// ********************
+// CREW CAROUSEL SLIDER
+// ********************
+
+// controls
+
+const crewDots = document.querySelectorAll('.crew__dot');
+const crewImages = document.querySelectorAll('.crew__image');
+const crewDescriptions = document.querySelectorAll('.crew__description');
+
+const showActiveCrew = index => {
+  // show appropriate image
+  crewImages.forEach((img, imgIndex) => {
+    img.style.display = 'none';
+    imgIndex === index ? (crewImages[index].style.display = 'block') : '';
+  });
+
+  // show appropriate description
+  crewDescriptions.forEach((desc, descIndex) => {
+    desc.style.display = 'none';
+    descIndex === index
+      ? (crewDescriptions[index].style.display = 'block')
+      : '';
+  });
+};
+
+crewDots.forEach((dot, index) => {
+  const isActive = dot.classList.contains('crew__dot--active');
+  if (isActive) {
+    showActiveCrew(index);
+  }
+});
+
+crewDots.forEach((dot, index) => {
+  dot.addEventListener('click', e => {
+    let target;
+    if (e.target.tagName === 'DIV') {
+      target = e.target;
+    } else if (e.target.tagName === 'SPAN') {
+      target = e.target.parentElement;
+    }
+    crewDots.forEach(dot => dot.classList.remove('crew__dot--active'));
+    target.classList.add('crew__dot--active');
+    showActiveCrew(index);
+  });
+});

@@ -23,14 +23,14 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="starter-code/assets/favicon-32x32.png"
     />
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
   <body class="body">
     <!-- HOME PAGE -->
-    <div class="page page--home">
+    <div class="page page--home hide">
       <header class="header">
         <img
           src="starter-code/assets/Logo-desktop.svg"
@@ -249,7 +249,7 @@
       </main>
     </div>
     <!-- CREW PAGE -->
-    <div class="page page--crew hide">
+    <div class="page page--crew">
       <header class="header">
         <img
           src="starter-code/assets/Logo-desktop.svg"
@@ -295,14 +295,29 @@
             <img
               src="starter-code/assets/crew/image-douglas-hurley.png"
               alt="douglas hurley picture"
-              class="crew__image--1"
+              class="crew__image--1 crew__image"
+            />
+            <img
+              src="starter-code/assets/crew/image-mark-shuttleworth.png"
+              alt="douglas hurley picture"
+              class="crew__image--2 crew__image"
+            />
+            <img
+              src="starter-code/assets/crew/image-victor-glover.png"
+              alt="douglas hurley picture"
+              class="crew__image--3 crew__image"
+            />
+            <img
+              src="starter-code/assets/crew/image-anousheh-ansari.png"
+              alt="douglas hurley picture"
+              class="crew__image--4 crew__image"
             />
           </div>
           <div class="crew__choose">
-            <div class="dot dot--active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+            <div class="crew__dot crew__dot--active"><span></span></div>
+            <div class="crew__dot"><span></span></div>
+            <div class="crew__dot"><span></span></div>
+            <div class="crew__dot"><span></span></div>
           </div>
           <div class="crew__description">
             <h4 class="heading heading--fourth crew__job">comander</h4>
@@ -311,6 +326,42 @@
               Douglas Gerald Hurley is an American engineer, former Marine Corps
               pilot and former NASA astronaut. He launched into space for the
               third time as commander of Crew Dragon Demo-2.
+            </p>
+          </div>
+          <div class="crew__description">
+            <h4 class="heading heading--fourth crew__job">
+              Mission Specialist
+            </h4>
+            <h3 class="heading heading--tertiary crew__name">
+              MARK SHUTTLEWORTH
+            </h3>
+            <p class="crew__text">
+              Mark Richard Shuttleworth is the founder and CEO of Canonical, the
+              company behind the Linux-based Ubuntu operating system.
+              Shuttleworth became the first South African to travel to space as
+              a space tourist.
+            </p>
+          </div>
+          <div class="crew__description">
+            <h4 class="heading heading--fourth crew__job">PILOT</h4>
+            <h3 class="heading heading--tertiary crew__name">Victor Glover</h3>
+            <p class="crew__text">
+              Pilot on the first operational flight of the SpaceX Crew Dragon to
+              the International Space Station. Glover is a commander in the U.S.
+              Navy where he pilots an F/A-18.He was a crew member of Expedition
+              64, and served as a station systems flight engineer.
+            </p>
+          </div>
+          <div class="crew__description">
+            <h4 class="heading heading--fourth crew__job">Flight Engineer</h4>
+            <h3 class="heading heading--tertiary crew__name">
+              Anousheh Ansari
+            </h3>
+            <p class="crew__text">
+              Anousheh Ansari is an Iranian American engineer and co-founder of
+              Prodea Systems. Ansari was the fourth self-funded space tourist,
+              the first self-funded woman to fly to the ISS, and the first
+              Iranian in space.
             </p>
           </div>
         </div>
@@ -371,7 +422,7 @@
             <button class="dot">2</button>
             <button class="dot">3</button>
           </div>
-          <div class="crew__description">
+          <div class="technology__description">
             <h4 class="heading heading--sixth">the termonology...</h4>
             <h3 class="heading heading--tertiary crew__name">LAUNCH VEHICLE</h3>
             <p class="technology__text">
