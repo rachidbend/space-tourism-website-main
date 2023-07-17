@@ -244,39 +244,78 @@ const allTechnologyDescriptions = document.querySelectorAll(
   '.technology__description'
 );
 const technologyControls = document.querySelectorAll('.technology__dot');
+allTechnologyImages[0].style.transform = 'translateX(0%)';
+allTechnologyImages[1].style.transform = 'translateX(100%)';
+allTechnologyImages[2].style.transform = 'translateX(200%)';
 
 technologyControls.forEach((ctrl, ctrlIndex) => {
   ctrl.addEventListener('click', e => {
-    // get which image is requested
+    let currActive = 0;
+    technologyControls.forEach((inneCrtrl, innerCtrlIndex) => {
+      inneCrtrl.classList.contains('technology__dot--active')
+        ? (currActive = innerCtrlIndex)
+        : '';
+    });
+    // console.log(currActive, ctrlIndex);
+    // change active control dot
+    technologyControls.forEach((dot, i) => {
+      i === ctrlIndex
+        ? dot.classList.add('technology__dot--active')
+        : dot.classList.remove('technology__dot--active');
+    });
 
-    allTechnologyImages.forEach((img, imgIndex) => {
-      let prevImg = 0;
-      let nextImg = 0;
-      // the requested image gets curr class
-      if (ctrlIndex === imgIndex) {
-        img.classList.remove('technology__img--prev');
-        img.classList.remove('technology__img--next');
-        img.classList.add('technology__img--curr');
+    // couldn't figure out a better way of doing it
+    if (ctrlIndex === 0) {
+      allTechnologyImages[0].style.transform = 'translateX(0%)';
+      allTechnologyImages[1].style.transform = 'translateX(100%)';
+      allTechnologyImages[2].style.transform = 'translateX(200%)';
+    }
 
-        // the one before it gets prev class
-        prevImg = imgIndex - 1;
-        if (prevImg === -1) {
-          prevImg = allTechnologyImages.length - 1;
-        }
-        allTechnologyImages[prevImg].classList.remove('technology__img--curr');
-        allTechnologyImages[prevImg].classList.remove('technology__img--next');
-        allTechnologyImages[prevImg].classList.add('technology__img--prev');
-        // the one after it gets next class
-        nextImg = imgIndex + 1;
-        if (nextImg === allTechnologyImages.length) {
-          nextImg = 0;
-        }
-        allTechnologyImages[nextImg].classList.remove('technology__img--curr');
-        allTechnologyImages[nextImg].classList.remove('technology__img--prev');
-        allTechnologyImages[nextImg].classList.add('technology__img--next');
-
-        // display corispanding image and discription
+    if (ctrlIndex === 1) {
+      allTechnologyImages[0].style.transform = 'translateX(-100%)';
+      allTechnologyImages[1].style.transform = 'translateX(0%)';
+      allTechnologyImages[2].style.transform = 'translateX(100%)';
+    }
+    if (ctrlIndex === 2) {
+      allTechnologyImages[0].style.transform = 'translateX(-200%)';
+      allTechnologyImages[1].style.transform = 'translateX(-100%)';
+      allTechnologyImages[2].style.transform = 'translateX(0%)';
+    }
+    allTechnologyDescriptions.forEach((desc, descIndex) => {
+      desc.classList.add('desc__hide');
+      if (ctrlIndex === descIndex) {
+        desc.classList.remove('desc__hide');
       }
     });
+
+    // get which image is requested
+    // allTechnologyImages.forEach((img, imgIndex) => {
+    //   // display corispanding image
+    //   let prevImg = 0;
+    //   let nextImg = 0;
+    //   // the requested image gets curr class
+    //   if (ctrlIndex === imgIndex) {
+    //     img.classList.remove('technology__img--prev');
+    //     img.classList.remove('technology__img--next');
+    //     img.classList.add('technology__img--curr');
+
+    //     // the one before it gets prev class
+    //     prevImg = imgIndex - 1;
+    //     if (prevImg === -1) {
+    //       prevImg = allTechnologyImages.length - 1;
+    //     }
+    //     allTechnologyImages[prevImg].classList.remove('technology__img--curr');
+    //     allTechnologyImages[prevImg].classList.remove('technology__img--next');
+    //     allTechnologyImages[prevImg].classList.add('technology__img--prev');
+    //     // the one after it gets next class
+    //     nextImg = imgIndex + 1;
+    //     if (nextImg === allTechnologyImages.length) {
+    //       nextImg = 0;
+    //     }
+    //     allTechnologyImages[nextImg].classList.remove('technology__img--curr');
+    //     allTechnologyImages[nextImg].classList.remove('technology__img--prev');
+    //     allTechnologyImages[nextImg].classList.add('technology__img--next');
+    //   }
+    // });
   });
 });

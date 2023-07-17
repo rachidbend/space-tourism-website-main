@@ -78,15 +78,18 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   line-height: 2.5rem;
 }
 
-.technology__img--prev {
-  transform: translateX(-100%);
-  z-index: 100;
-}
+// .technology__img--prev {
+//   transform: translateX(-100%);
+//   // z-index: 100;
+// }
 .technology__img--curr {
-  transform: translateX(0%);
-  z-index: 200;
+  // transform: translateX(0%);
+  // z-index: 200;
 }
-.technology__img--next {
-  transform: translateX(100%);
-  z-index: 90;
+// .technology__img--next {
+//   transform: translateX(100%);
+//   // z-index: 90;
+// }
+.desc__hide {
+  display: none;
 }
