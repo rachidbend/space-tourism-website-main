@@ -3,6 +3,7 @@ $imgpath: '/../starter-code/assets/crew/';
 .page--crew {
   background: url(#{$imgpath}background-crew-mobile.jpg) no-repeat;
   background-size: cover;
+  height: 110vh;
 }
 
 .heading--fourth {
@@ -27,6 +28,7 @@ $imgpath: '/../starter-code/assets/crew/';
 .crew__img img {
   height: 100%;
   width: auto;
+  transition: opacity 250ms ease-out;
 }
 
 .heading--tertiary {
@@ -75,4 +77,14 @@ $imgpath: '/../starter-code/assets/crew/';
 
 .crew__fadout {
   opacity: 0;
+  transition: opacity 260ms ease-out;
+}
+.crew__fadin {
+  // opacity: 1;
+  transition: opacity 260ms ease-out;
+}
+
+.crew__description {
+  // opacity: 0;
+  transition: all 260ms ease;
 }

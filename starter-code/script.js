@@ -184,16 +184,37 @@ const crewDescriptions = document.querySelectorAll('.crew__description');
 const showActiveCrew = index => {
   // show appropriate image
   crewImages.forEach((img, imgIndex) => {
-    img.style.display = 'none';
-    imgIndex === index ? (crewImages[index].style.display = 'block') : '';
+    img.classList.add('crew__fadout');
+    setTimeout(() => {
+      img.style.display = 'none';
+      img.classList.remove('crew__fadout');
+      imgIndex === index ? (crewImages[index].style.display = 'block') : '';
+      img.classList.add('crew__fadout');
+      setTimeout(() => {
+        img.classList.remove('crew__fadout');
+        console.log('image done');
+      }, 160);
+    }, 250);
   });
 
   // show appropriate description
+
+  console.log(crewDescriptions[index]);
   crewDescriptions.forEach((desc, descIndex) => {
-    desc.style.display = 'none';
-    descIndex === index
-      ? (crewDescriptions[index].style.display = 'block')
-      : '';
+    desc.classList.add('crew__fadout');
+    setTimeout(() => {
+      desc.style.display = 'none';
+      desc.classList.remove('crew__fadout');
+      descIndex === index
+        ? (crewDescriptions[index].style.display = 'block')
+        : '';
+      desc.classList.add('crew__fadout');
+
+      setTimeout(() => {
+        console.log('desc done');
+        desc.classList.remove('crew__fadout');
+      }, 20);
+    }, 400);
   });
 };
 
