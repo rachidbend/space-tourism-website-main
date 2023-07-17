@@ -144,6 +144,7 @@ allPlanetCtrl.forEach(ctrl => {
     // document
 
     // 2- DESCRIPTIONS
+
     allPlanetDescriptions.forEach(desc => {
       desc.classList.add('planet__fadeout');
       setTimeout(() => {
@@ -175,8 +176,6 @@ allPlanetCtrl.forEach(ctrl => {
 // CREW CAROUSEL SLIDER
 // ********************
 
-// controls
-
 const crewDots = document.querySelectorAll('.crew__dot');
 const crewImages = document.querySelectorAll('.crew__image');
 const crewDescriptions = document.querySelectorAll('.crew__description');
@@ -192,14 +191,11 @@ const showActiveCrew = index => {
       img.classList.add('crew__fadout');
       setTimeout(() => {
         img.classList.remove('crew__fadout');
-        console.log('image done');
       }, 160);
     }, 250);
   });
 
   // show appropriate description
-
-  console.log(crewDescriptions[index]);
   crewDescriptions.forEach((desc, descIndex) => {
     desc.classList.add('crew__fadout');
     setTimeout(() => {
@@ -211,7 +207,6 @@ const showActiveCrew = index => {
       desc.classList.add('crew__fadout');
 
       setTimeout(() => {
-        console.log('desc done');
         desc.classList.remove('crew__fadout');
       }, 20);
     }, 400);
@@ -236,5 +231,52 @@ crewDots.forEach((dot, index) => {
     crewDots.forEach(dot => dot.classList.remove('crew__dot--active'));
     target.classList.add('crew__dot--active');
     showActiveCrew(index);
+  });
+});
+
+// **************************
+// TECHNOLOGY CAROUSEL SLIDER
+// **************************
+
+// elements and controls
+const allTechnologyImages = document.querySelectorAll('.technology__image');
+const allTechnologyDescriptions = document.querySelectorAll(
+  '.technology__description'
+);
+const technologyControls = document.querySelectorAll('.technology__dot');
+
+technologyControls.forEach((ctrl, ctrlIndex) => {
+  ctrl.addEventListener('click', e => {
+    // get which image is requested
+
+    allTechnologyImages.forEach((img, imgIndex) => {
+      let prevImg = 0;
+      let nextImg = 0;
+      // the requested image gets curr class
+      if (ctrlIndex === imgIndex) {
+        img.classList.remove('technology__img--prev');
+        img.classList.remove('technology__img--next');
+        img.classList.add('technology__img--curr');
+
+        // the one before it gets prev class
+        prevImg = imgIndex - 1;
+        if (prevImg === -1) {
+          prevImg = allTechnologyImages.length - 1;
+        }
+        allTechnologyImages[prevImg].classList.remove('technology__img--curr');
+        allTechnologyImages[prevImg].classList.remove('technology__img--next');
+        allTechnologyImages[prevImg].classList.add('technology__img--prev');
+        // the one after it gets next class
+        nextImg = imgIndex + 1;
+        if (nextImg === allTechnologyImages.length) {
+          nextImg = 0;
+        }
+        allTechnologyImages[nextImg].classList.remove('technology__img--curr');
+        allTechnologyImages[nextImg].classList.remove('technology__img--prev');
+        allTechnologyImages[nextImg].classList.add('technology__img--next');
+
+        // display corispanding image and discription
+      }
+    });
   });
 });

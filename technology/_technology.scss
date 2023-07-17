@@ -9,10 +9,18 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 .technology__img {
   margin: 0 -2.6rem;
   margin-bottom: 3.4rem;
-  object-fit: cover;
+  // object-fit: cover;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: relative;
+  // comes from the aspect ration of the image
+  height: calc(100vw / 2.477);
 }
 
-.technology__img img {
+.technology__image {
+  transition: transform 400ms;
+  position: absolute;
 }
 
 /* to make sure the image doesn't overflow and make the page wider */
@@ -27,7 +35,7 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   margin-bottom: 2.6rem;
 }
 
-.page--technology .dot {
+.technology__dot {
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
@@ -42,11 +50,11 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   transition: border-color 250ms ease-in-out;
 }
 
-.page--technology .dot:hover {
+.technology__dot:hover {
   border-color: var(--color-white);
 }
 
-.page--technology .dot--active {
+.technology__dot--active {
   background-color: var(--color-white);
   border-color: var(--color-white);
   color: #000;
@@ -68,4 +76,17 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   color: var(--color-blue-light);
   letter-spacing: 0;
   line-height: 2.5rem;
+}
+
+.technology__img--prev {
+  transform: translateX(-100%);
+  z-index: 100;
+}
+.technology__img--curr {
+  transform: translateX(0%);
+  z-index: 200;
+}
+.technology__img--next {
+  transform: translateX(100%);
+  z-index: 100;
 }
