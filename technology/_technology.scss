@@ -19,7 +19,7 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 }
 
 .technology__image {
-  transition: transform 400ms;
+  transition: transform 800ms;
   position: absolute;
 }
 
@@ -88,5 +88,5 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 }
 .technology__img--next {
   transform: translateX(100%);
-  z-index: 100;
+  z-index: 90;
 }
