@@ -99,18 +99,13 @@ linkBtn.forEach(link => {
 
 // get controls
 const allPlanetCtrl = document.querySelectorAll('.planet__link');
-const allPlanetImages = document.querySelectorAll('.planet__images');
-const allPlanetDescriptions = document.querySelectorAll(
-  '.palnet__description '
-);
+const allPlanetImages = document.querySelectorAll('.planet__image');
+const allPlanetDescriptions = document.querySelectorAll('.planet__description');
 const allPlanetInformation = document.querySelectorAll('.planet__info');
-
 const allPlanetLinks = document.querySelectorAll('.planet__link');
 
-// document.querySelector('.planet__images--active').style.display = 'inline-block';
-document.querySelector('.planet__images--active').style.display =
-  'inline-block';
-document.querySelector('.palnet__description--active').style.display =
+document.querySelector('.planet__image--active').style.display = 'inline-block';
+document.querySelector('.planet__description--active').style.display =
   'inline-block';
 document.querySelector('.planet__info--active').style.display = 'inline-block';
 
@@ -126,49 +121,31 @@ allPlanetCtrl.forEach(ctrl => {
       link.classList.remove('planet--active');
     });
     document.querySelector(`.${getClass}`).classList.add('planet--active');
+    console.log(document.querySelector(`.${getClass}`));
+
     // show the appropriate:
+
+    const displayPlanet = (elements, section) => {
+      console.log(elements);
+      elements.forEach(el => {
+        el.classList.add('planet__fadeout');
+        setTimeout(() => {
+          // remove the active class
+          el.classList.remove(`planet__${section}--active`);
+          el.classList.remove('planet__fadeout');
+          document
+            .querySelector(`.planet__${section}--${getClass}`)
+            .classList.add(`planet__${section}--active`);
+          el.style.display = 'inline-block';
+        }, 450);
+      });
+    };
     // 1- IMAGES
-    // remove the active class
-    allPlanetImages.forEach(img => {
-      img.classList.add('planet__fadeout');
-      setTimeout(() => {
-        img.classList.remove('planet__images--active');
-        img.classList.remove('planet__fadeout');
-        document
-          .querySelector(`.planet__image--${getClass}`)
-          .classList.add('planet__images--active');
-        img.style.display = 'inline-block';
-      }, 450);
-    });
-    // and put it on the appropriate image
-    // document
-
+    displayPlanet(allPlanetImages, 'image');
     // 2- DESCRIPTIONS
-
-    allPlanetDescriptions.forEach(desc => {
-      desc.classList.add('planet__fadeout');
-      setTimeout(() => {
-        desc.classList.remove('palnet__description--active');
-        desc.classList.remove('planet__fadeout');
-        document
-          .querySelector(`.palnet__description--${getClass}`)
-          .classList.add('palnet__description--active');
-        desc.style.display = 'inline-block';
-      }, 450);
-    });
-
+    displayPlanet(allPlanetDescriptions, 'description');
     // 3- INFORMATION
-    allPlanetInformation.forEach(info => {
-      info.classList.add('planet__fadeout');
-      setTimeout(() => {
-        info.classList.remove('planet__info--active');
-        info.classList.remove('planet__fadeout');
-        document
-          .querySelector(`.planet__info--${getClass}`)
-          .classList.add('planet__info--active');
-        info.style.display = 'inline-block';
-      }, 400);
-    });
+    displayPlanet(allPlanetInformation, 'info');
   });
 });
 
@@ -287,35 +264,5 @@ technologyControls.forEach((ctrl, ctrlIndex) => {
         desc.classList.remove('desc__hide');
       }
     });
-
-    // get which image is requested
-    // allTechnologyImages.forEach((img, imgIndex) => {
-    //   // display corispanding image
-    //   let prevImg = 0;
-    //   let nextImg = 0;
-    //   // the requested image gets curr class
-    //   if (ctrlIndex === imgIndex) {
-    //     img.classList.remove('technology__img--prev');
-    //     img.classList.remove('technology__img--next');
-    //     img.classList.add('technology__img--curr');
-
-    //     // the one before it gets prev class
-    //     prevImg = imgIndex - 1;
-    //     if (prevImg === -1) {
-    //       prevImg = allTechnologyImages.length - 1;
-    //     }
-    //     allTechnologyImages[prevImg].classList.remove('technology__img--curr');
-    //     allTechnologyImages[prevImg].classList.remove('technology__img--next');
-    //     allTechnologyImages[prevImg].classList.add('technology__img--prev');
-    //     // the one after it gets next class
-    //     nextImg = imgIndex + 1;
-    //     if (nextImg === allTechnologyImages.length) {
-    //       nextImg = 0;
-    //     }
-    //     allTechnologyImages[nextImg].classList.remove('technology__img--curr');
-    //     allTechnologyImages[nextImg].classList.remove('technology__img--prev');
-    //     allTechnologyImages[nextImg].classList.add('technology__img--next');
-    //   }
-    // });
   });
 });

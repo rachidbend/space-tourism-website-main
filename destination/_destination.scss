@@ -44,7 +44,7 @@ $imgpath: '/../starter-code/assets/destination/';
   padding-bottom: 1.1rem;
 }
 
-.palnet__description {
+.planet__description {
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
   border-bottom: 1px solid #383b4b;
@@ -74,7 +74,7 @@ $imgpath: '/../starter-code/assets/destination/';
   margin-bottom: 3.2rem;
 }
 
-.planet__images {
+.planet__image {
   height: 0;
   /* width: 0; */
   position: absolute;
@@ -83,7 +83,7 @@ $imgpath: '/../starter-code/assets/destination/';
   transition: opacity 400ms ease-in-out;
   display: none;
 }
-.planet__images--active {
+.planet__image--active {
   visibility: visible;
   position: relative;
   width: 15rem;
@@ -100,7 +100,7 @@ $imgpath: '/../starter-code/assets/destination/';
   border-bottom: 0.3rem solid var(--color-white);
 }
 
-.palnet__description {
+.planet__description {
   height: 0;
   position: absolute;
   visibility: hidden;
@@ -109,7 +109,7 @@ $imgpath: '/../starter-code/assets/destination/';
   display: none;
 }
 
-.palnet__description--active {
+.planet__description--active {
   height: auto;
   position: relative;
   visibility: visible;
