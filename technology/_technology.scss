@@ -78,6 +78,17 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   line-height: 2.5rem;
 }
 
+.technolog__description {
+  // opacity: 1;
+  transition: all 280ms ease-in-out;
+}
+
 .desc__hide {
   display: none;
+  transition: all 280ms;
+}
+
+.technology__fadeout {
+  opacity: 0;
+  transition: all 280ms;
 }

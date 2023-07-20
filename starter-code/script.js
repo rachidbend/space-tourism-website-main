@@ -241,7 +241,7 @@ technologyControls.forEach((ctrl, ctrlIndex) => {
         : dot.classList.remove('technology__dot--active');
     });
 
-    // couldn't figure out a better way of doing it
+    // couldn't figure out a better way of animating the images
     if (ctrlIndex === 0) {
       allTechnologyImages[0].style.transform = 'translateX(0%)';
       allTechnologyImages[1].style.transform = 'translateX(100%)';
@@ -259,10 +259,31 @@ technologyControls.forEach((ctrl, ctrlIndex) => {
       allTechnologyImages[2].style.transform = 'translateX(0%)';
     }
     allTechnologyDescriptions.forEach((desc, descIndex) => {
-      desc.classList.add('desc__hide');
-      if (ctrlIndex === descIndex) {
-        desc.classList.remove('desc__hide');
-      }
+      // start the fadeout
+      desc.classList.add('technology__fadeout');
+      // make usre the opacity becomes 0
+      desc.style.opacity = '0';
+
+      setTimeout(() => {
+        // after 200ms hide all the descriptions then
+        desc.classList.add('desc__hide');
+        // get the requested description is found
+        if (ctrlIndex === descIndex) {
+          setTimeout(() => {
+            // we wait a little then we remove the hide and the fadeout
+            desc.classList.remove('desc__hide');
+            desc.classList.remove('technology__fadeout');
+            // we make sure its displayed as a block with 0 opacity so that the animation would work
+            desc.style.display === 'block';
+            // we make sure the animation is applied
+            desc.style.transition = '280ms ease-in-out';
+            setTimeout(() => {
+              // then we change the opacity to 1 to start the fadein animation
+              desc.style.opacity = '1';
+            }, 50);
+          }, 50);
+        }
+      }, 280);
     });
   });
 });
