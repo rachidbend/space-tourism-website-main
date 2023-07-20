@@ -12,13 +12,16 @@ $imgpath: '/../starter-code/assets/crew/';
     padding-top: 0.2rem;
     margin-bottom: 3.3rem;
   }
+  .heading--number {
+    margin-right: 0.8rem;
+  }
 }
 
 .crew__img {
   height: 22.2rem;
   width: auto;
   border-bottom: 1px solid #383b4b;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.8rem;
   display: flex;
   justify-content: center;
 }
@@ -32,7 +35,7 @@ $imgpath: '/../starter-code/assets/crew/';
   display: flex;
   gap: 0.6rem;
   justify-content: center;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2.4rem;
 }
 .page--crew .crew__dot {
   padding: 0.5rem;
