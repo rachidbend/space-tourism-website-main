@@ -19,9 +19,16 @@ font-family: 'Barlow', serif;
 :root {
   /* COLORS */
   --color-white: #ffffff;
-  --color-blue-light: #d2d8f9;
+  --color-blue-light: #d0d6f9;
+  // --color-blue-light: #d2d8f9;
+
   --color-blue-dark: #0c0e18;
   --color-gray: #979797;
+
+  // font family
+  --type--barlow-condensed: 'Barlow Condensed', sans-serif;
+  --type--barlow: 'Barlow', sans-serif;
+  --type--bellefair: 'Bellefair', sans-serif;
 }
 
 *,
@@ -85,52 +92,9 @@ img {
   margin-top: 10.8rem;
   padding-left: 2.2rem;
 }
-.nav__link {
-  display: inline-block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  color: var(--color-white);
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.27rem;
-  margin-bottom: 2.2rem;
-  padding: 1rem;
-  width: 100%;
-}
-.nav__link--number {
-  font-weight: bold;
-}
+
 .active {
   width: 25.4rem;
-}
-
-.heading {
-  color: var(--color-white);
-}
-.text {
-  color: var(--color-blue-light);
-  font-size: 1.5rem;
-  font-family: 'Barlow', serif;
-  line-height: 2.5rem;
-  font-weight: 400;
-}
-
-.heading--primary {
-  font-size: 8rem;
-  font-family: 'Bellefair', serif;
-  margin-bottom: 1.6rem;
-  font-weight: 400;
-  line-height: 1.26;
-  letter-spacing: 0;
-}
-.heading--fifth {
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 0.27rem;
-  color: var(--color-blue-light);
-  margin-bottom: 1.6rem;
-  font-weight: 400;
 }
 
 .nav__open {
@@ -140,6 +104,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transform: translateY(-1px);
 }
 
 .nav__open--bar {
@@ -161,13 +126,6 @@ img {
 
 .link__active {
   border-right: 0.3rem solid var(--color-white);
-}
-
-.heading--secondary {
-  font-family: 'Bellefair', serif;
-  text-transform: uppercase;
-  font-size: 5.6rem;
-  font-weight: 400;
 }
 
 .body::after {

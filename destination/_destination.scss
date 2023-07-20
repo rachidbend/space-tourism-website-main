@@ -1,82 +1,45 @@
 $imgpath: '/../starter-code/assets/destination/';
 
-.hero {
-  padding: 2.4rem;
-  padding-bottom: 0;
-  padding-bottom: 8.7rem;
-  text-align: center;
-}
-
 .page--destination {
   background: url(#{$imgpath}background-destination-mobile.jpg) no-repeat;
   background-size: cover;
+  // background-attachment: fixed;
+  .hero {
+    padding-top: 0;
+  }
+  .heading--fifth {
+    color: var(--color-white);
+    padding-top: 0.2rem;
+    margin-bottom: 3.3rem;
+  }
 }
 
-.heading--fifth {
-  color: var(--color-white);
-  margin-bottom: 3.2rem;
-}
 .heading--number {
   opacity: 0.25;
 }
 .planet__img {
-  width: 15rem;
+  width: 17rem;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 2.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .planet__list {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 2.6rem;
-  margin-bottom: 3.1rem;
-}
-.planet__item {
-}
-.planet__link {
-  color: var(--color-white);
-  text-transform: uppercase;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.236rem;
-  padding-bottom: 1.1rem;
+  gap: 2.5rem;
+  margin-bottom: 3.2rem;
 }
 
 .planet__description {
-  padding-bottom: 3.2rem;
-  margin-bottom: 3.2rem;
+  padding-bottom: 3.1rem;
+  margin-bottom: 3.3rem;
   border-bottom: 1px solid #383b4b;
-}
-.planet__text {
-  font-family: 'Barlow', serif;
-  color: var(--color-white);
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-.avr-distance-label,
-.est-time-label {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: var(--color-blue-light);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  margin-bottom: 1.2rem;
-}
-.avr-distance,
-.est-time {
-  font-size: 2.8rem;
-  font-family: 'Bellefair', serif;
-  text-transform: uppercase;
-  color: var(--color-white);
-  margin-bottom: 3.2rem;
 }
 
 .planet__image {
   height: 0;
-  /* width: 0; */
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -86,18 +49,17 @@ $imgpath: '/../starter-code/assets/destination/';
 .planet__image--active {
   visibility: visible;
   position: relative;
-  width: 15rem;
+  width: 17rem;
   height: auto;
   opacity: 1;
-  /* display: inline-block; */
 }
 
 .planet__link {
-  /* transition: 400ms ease-in-out; */
 }
 
 .planet--active {
   border-bottom: 0.3rem solid var(--color-white);
+  color: var(--color-white);
 }
 
 .planet__description {

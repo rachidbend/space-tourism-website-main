@@ -7,9 +7,10 @@ $imgpath: '/starter-code/assets/home/';
 
 .hero {
   padding: 2.4rem;
-  /* padding-bottom: 0; */
   padding-bottom: 4rem;
+  padding-top: 2.6rem;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .explore {
@@ -32,6 +33,12 @@ $imgpath: '/starter-code/assets/home/';
   width: 15rem;
   border-radius: 50%;
   z-index: 100;
+  margin-top: 4rem;
+}
+
+// to get the explore text in the perfect position
+.link--explore-text {
+  transform: translate(2px, 5px);
 }
 
 .link--explore::before {

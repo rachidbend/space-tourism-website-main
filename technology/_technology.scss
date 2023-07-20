@@ -25,7 +25,7 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 
 /* to make sure the image doesn't overflow and make the page wider */
 .hero {
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 .technology__choose {
@@ -58,24 +58,6 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   background-color: var(--color-white);
   border-color: var(--color-white);
   color: #000;
-}
-
-.heading--sixth {
-  font-size: 1.4rem;
-  font-family: 'Barlow Condensed', sans-serif;
-  letter-spacing: 0.236rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: var(--color-blue-light);
-  margin-bottom: 0.9rem;
-}
-
-.technology__text {
-  font-family: 'Barlow', serif;
-  font-size: 1.5rem;
-  color: var(--color-blue-light);
-  letter-spacing: 0;
-  line-height: 2.5rem;
 }
 
 .technolog__description {

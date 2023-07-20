@@ -4,17 +4,14 @@ $imgpath: '/../starter-code/assets/crew/';
   background: url(#{$imgpath}background-crew-mobile.jpg) no-repeat;
   background-size: cover;
   // min-height: 100vh;
-}
-
-.heading--fourth {
-  color: var(--color-white);
-  font-family: 'Bellefair', serif;
-  font-weight: 400;
-  letter-spacing: 0;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  opacity: 0.5;
-  margin-bottom: 0.8rem;
+  .hero {
+    padding-top: 0;
+  }
+  .heading--fifth {
+    color: var(--color-white);
+    padding-top: 0.2rem;
+    margin-bottom: 3.3rem;
+  }
 }
 
 .crew__img {
@@ -29,23 +26,6 @@ $imgpath: '/../starter-code/assets/crew/';
   height: 100%;
   width: auto;
   transition: opacity 250ms ease-out;
-}
-
-.heading--tertiary {
-  font-family: 'Bellefair', serif;
-  font-size: 2.4rem;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
-}
-
-.crew__text {
-  font-family: 'Barlow', serif;
-  font-size: 1.5rem;
-  color: var(--color-blue-light);
-  letter-spacing: 0;
-  line-height: 2.5rem;
 }
 
 .crew__choose {
