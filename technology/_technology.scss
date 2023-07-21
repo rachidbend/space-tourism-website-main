@@ -4,6 +4,18 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   background: url(#{$imgpathTechnology}background-technology-mobile.jpg)
     no-repeat;
   background-size: cover;
+
+  .heading--fifth {
+    color: var(--color-white);
+    padding-top: 0.2rem;
+    margin-bottom: 3.3rem;
+  }
+  .hero {
+    padding-top: 0;
+  }
+  .heading--number {
+    margin-right: 0.8rem;
+  }
 }
 
 .technology__img {
@@ -15,7 +27,10 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   justify-content: center;
   position: relative;
   // comes from the aspect ration of the image
-  height: calc(100vw / 2.477);
+  height: calc(100vw / 2.2);
+  img {
+    width: 111.14%;
+  }
 }
 
 .technology__image {
@@ -31,8 +46,8 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 .technology__choose {
   display: flex;
   justify-content: center;
-  gap: 2.6rem;
-  margin-bottom: 2.6rem;
+  gap: 1.6rem;
+  margin-bottom: 2.7rem;
 }
 
 .technology__dot {

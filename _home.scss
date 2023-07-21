@@ -1,8 +1,33 @@
 $imgpath: '/starter-code/assets/home/';
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
 
 .page--home {
   background: url(#{$imgpath}background-home-mobile.jpg) no-repeat;
   background-size: cover;
+
+  @include devices(tablet) {
+    background: url(#{$imgpath}background-home-tablet.jpg) no-repeat;
+  }
+  @include devices(desktop) {
+    background: url(#{$imgpath}background-home-desktop.jpg) no-repeat;
+  }
 }
 
 .hero {
@@ -11,6 +36,12 @@ $imgpath: '/starter-code/assets/home/';
   padding-top: 2.6rem;
   text-align: center;
   overflow-x: hidden;
+
+  @include devices(tablet) {
+    padding: 15.9rem;
+    padding-top: 10.8rem;
+    padding-bottom: 15.6rem;
+  }
 }
 
 .explore {
@@ -34,11 +65,23 @@ $imgpath: '/starter-code/assets/home/';
   border-radius: 50%;
   z-index: 100;
   margin-top: 4rem;
+  padding-bottom: 0;
+
+  @include devices(tablet) {
+    font-size: 3.2rem;
+    height: 24.2rem;
+    width: 24.2rem;
+    margin-top: 0;
+    letter-spacing: 0.2rem;
+  }
 }
 
 // to get the explore text in the perfect position
 .link--explore-text {
   transform: translate(2px, 5px);
+  @include devices(tablet) {
+    transform: translate(0px, 0px);
+  }
 }
 
 .link--explore::before {
@@ -58,78 +101,13 @@ $imgpath: '/starter-code/assets/home/';
   transform: scale(100%);
 }
 
-/* destination styles */
-/* 
-.page--destination {
-  background-image: url('../starter-code/assets/destination/background-destination-mobile.jpg');
-  min-height: 100vh;
-}
-
-.heading--fifth {
-  color: var(--color-white);
-  margin-bottom: 3.2rem;
-}
-.heading--number {
-  opacity: 0.25;
-}
-.planet__img {
-  width: 15rem;
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: 2.6rem;
-}
-.planet__choose {
-}
-.planet__list {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 2.6rem;
-  margin-bottom: 3.1rem;
-}
-.planet__item {
-}
-.planet__link {
-  color: var(--color-white);
-  text-transform: uppercase;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.4rem;
-  letter-spacing: 0.236rem;
-  padding-bottom: 1.1rem;
-}
-#moon {
-  border-bottom: 3px solid var(--color-white);
-}
-.palnet__description {
-  padding-bottom: 3.2rem;
-  margin-bottom: 3.2rem;
-  border-bottom: 1px solid #383b4b;
-}
-.planet__text {
-  font-family: 'Barlow', serif;
-  color: var(--color-white);
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
-
-.avr-distance-label,
-.est-time-label {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: var(--color-blue-light);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  margin-bottom: 1.2rem;
-}
-.avr-distance,
-.est-time {
-  font-size: 2.8rem;
-  font-family: 'Bellefair', serif;
-  text-transform: uppercase;
-  color: var(--color-white);
-  margin-bottom: 3.2rem;
-} */
-
 .hide {
   display: none;
 }
+
+// @media screen and (min-width: 768px) {
+//   .page--home {
+//     background: url(#{$imgpath}background-home-tablet.jpg) no-repeat;
+//     background-size: cover;
+//   }
+// }

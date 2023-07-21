@@ -16,6 +16,29 @@ font-family: 'Bellefair', serif;
 font-family: 'Barlow', serif;
 */
 
+// We define the mixins for two major breakpoints mobile and tablet
+
+// $breakpoint is the variable that can have several values
+//the name of the mixin is devices
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+}
+
 :root {
   /* COLORS */
   --color-white: #ffffff;
@@ -68,10 +91,21 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 2.4rem;
+
+  @include devices(tablet) {
+    padding: 2.4rem 3.9rem;
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
 }
 .logo {
   width: 4rem;
   height: 4rem;
+
+  @include devices(tablet) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
 }
 
 .nav {
@@ -83,14 +117,33 @@ img {
   overflow: hidden;
   position: absolute;
   transition: width 400ms ease-in-out;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(45px);
+  background-color: rgb(255 255 255 / 0.04);
   z-index: 999;
+
+  @include devices(tablet) {
+    position: relative;
+    height: auto;
+    width: auto;
+    margin-top: -2.4rem;
+    margin-right: -3.9rem;
+  }
 }
 
 .nav__list {
   min-width: 23rem;
   margin-top: 10.8rem;
   padding-left: 2.2rem;
+
+  @include devices(tablet) {
+    width: auto;
+    margin: 0;
+    padding: 4rem 4.6rem;
+    display: flex;
+    gap: 3.5rem;
+    padding-bottom: 0;
+    align-items: baseline;
+  }
 }
 
 .active {
@@ -105,6 +158,9 @@ img {
   flex-direction: column;
   justify-content: space-between;
   transform: translateY(-1px);
+  @include devices(tablet) {
+    display: none;
+  }
 }
 
 .nav__open--bar {
@@ -125,7 +181,11 @@ img {
 }
 
 .link__active {
-  border-right: 0.3rem solid var(--color-white);
+  border-right: 0.4rem solid var(--color-white);
+  @include devices(tablet) {
+    border-right: none;
+    border-bottom: 0.3rem solid var(--color-white);
+  }
 }
 
 .body::after {

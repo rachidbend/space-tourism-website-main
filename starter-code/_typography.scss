@@ -2,21 +2,49 @@
 // --type--barlow-condensed
 // --type--barlow
 // --type--bellefair
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 680px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1440px) {
+      @content;
+    }
+  }
+}
 .nav__link {
   display: inline-block;
   font-family: var(--type--barlow-condensed);
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-white);
   font-size: 1.6rem;
   text-transform: uppercase;
   letter-spacing: 0.27rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.3rem;
   padding: 1rem;
   width: 100%;
+
+  @include devices(tablet) {
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    padding-bottom: 3.7rem;
+  }
 }
 .nav__link--number {
   font-weight: bold;
+  margin-right: 0.4rem;
+  @include devices(tablet) {
+    display: none;
+  }
 }
 .text {
   color: var(--color-blue-light);
@@ -39,6 +67,11 @@
   font-weight: 400;
   line-height: 1.26;
   letter-spacing: 0;
+
+  @include devices(tablet) {
+    font-size: 15rem;
+    margin-bottom: 0.4rem;
+  }
 }
 .heading--secondary {
   text-transform: uppercase;
@@ -67,15 +100,25 @@
   font-size: 1.6rem;
   text-transform: uppercase;
   font-family: var(--type--barlow-condensed);
-  letter-spacing: 2.7px;
+  letter-spacing: 0.27rem;
   line-height: 1;
   color: var(--color-blue-light);
   margin-bottom: 1.7rem;
   font-weight: 400;
+
+  @include devices(tablet) {
+    font-size: 2rem;
+    letter-spacing: 0.338rem;
+    margin-bottom: 0.7rem;
+  }
 }
 
 .page--home .heading--fifth {
   transform: translateX(1px);
+
+  @include devices(tablet) {
+    transform: translateX(2px);
+  }
 }
 
 .heading--number {
@@ -135,6 +178,10 @@
   color: var(--color-blue-light);
   letter-spacing: 0;
   line-height: 2.5rem;
+  @include devices(tablet) {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
 }
 
 // .crew__text {
