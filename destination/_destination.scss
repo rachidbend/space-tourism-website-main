@@ -1,16 +1,52 @@
 $imgpath: '/../starter-code/assets/destination/';
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 680px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
 .page--destination {
   background: url(#{$imgpath}background-destination-mobile.jpg) no-repeat;
   background-size: cover;
-  // background-attachment: fixed;
+
+  @include devices(tablet) {
+    background: url(#{$imgpath}background-destination-tablet.jpg) no-repeat;
+    background-size: cover;
+  }
   .hero {
     padding-top: 0;
+
+    @include devices(tablet) {
+      padding: 3.9rem;
+    }
   }
   .heading--fifth {
     color: var(--color-white);
     padding-top: 0.2rem;
     margin-bottom: 3.3rem;
+
+    @include devices(tablet) {
+      text-align: left;
+      margin-bottom: 6.3rem;
+    }
+  }
+}
+
+.planet {
+  @include devices(tablet) {
+    padding: 0 7rem;
   }
 }
 
@@ -22,6 +58,11 @@ $imgpath: '/../starter-code/assets/destination/';
   height: auto;
   margin: 0 auto;
   margin-bottom: 2.4rem;
+
+  @include devices(tablet) {
+    margin-bottom: 5.1rem;
+    width: 30rem;
+  }
 }
 
 .planet__list {
@@ -30,6 +71,11 @@ $imgpath: '/../starter-code/assets/destination/';
   justify-content: center;
   gap: 2.5rem;
   margin-bottom: 3.2rem;
+
+  @include devices(tablet) {
+    gap: 3.3rem;
+    margin-bottom: 4.7rem;
+  }
 }
 
 .planet__description {
@@ -52,6 +98,9 @@ $imgpath: '/../starter-code/assets/destination/';
   width: 17rem;
   height: auto;
   opacity: 1;
+  @include devices(tablet) {
+    width: 30rem;
+  }
 }
 
 .planet__link {

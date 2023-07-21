@@ -48,6 +48,10 @@ $imgpath: '/starter-code/assets/home/';
 
 .explore {
   text-align: center;
+  @include devices(tablet) {
+    // padding here instead of margin bottom in the explore link to stretch the body to have the background visible
+    padding-bottom: 9rem;
+  }
 }
 
 .link--explore {
