@@ -24,9 +24,11 @@ $imgpath: '/starter-code/assets/home/';
 
   @include devices(tablet) {
     background: url(#{$imgpath}background-home-tablet.jpg) no-repeat;
+    background-size: cover;
   }
   @include devices(desktop) {
     background: url(#{$imgpath}background-home-desktop.jpg) no-repeat;
+    background-size: cover;
   }
 }
 
