@@ -1,19 +1,62 @@
 $imgpath: '/../starter-code/assets/crew/';
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 680px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
 
 .page--crew {
   background: url(#{$imgpath}background-crew-mobile.jpg) no-repeat;
   background-size: cover;
-  // min-height: 100vh;
+
+  @include devices(tablet) {
+    background: url(#{$imgpath}background-crew-tablet.jpg) no-repeat;
+    background-size: cover;
+  }
+
   .hero {
     padding-top: 0;
+    @include devices(tablet) {
+      padding: 3.9rem;
+      padding-bottom: 0;
+      padding-top: 4rem;
+    }
   }
   .heading--fifth {
     color: var(--color-white);
     padding-top: 0.2rem;
     margin-bottom: 3.3rem;
+    @include devices(tablet) {
+      text-align: left;
+      margin-bottom: 6.3rem;
+    }
   }
   .heading--number {
     margin-right: 0.8rem;
+
+    @include devices(tablet) {
+      margin-right: 0.6rem;
+    }
+  }
+}
+.crew {
+  @include devices(tablet) {
+    // padding: 0 11.6rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
   }
 }
 
@@ -24,11 +67,23 @@ $imgpath: '/../starter-code/assets/crew/';
   margin-bottom: 2.8rem;
   display: flex;
   justify-content: center;
+
+  @include devices(tablet) {
+    grid-row: 3;
+    height: 53.2rem;
+    width: auto;
+    margin-bottom: 0rem;
+    border: none;
+  }
 }
 .crew__img img {
   height: 100%;
   width: auto;
   transition: opacity 250ms ease-out;
+  @include devices(tablet) {
+    height: 53.2rem;
+    width: auto;
+  }
 }
 
 .crew__choose {
@@ -36,6 +91,11 @@ $imgpath: '/../starter-code/assets/crew/';
   gap: 0.6rem;
   justify-content: center;
   margin-bottom: 2.4rem;
+
+  @include devices(tablet) {
+    grid-row: 2;
+    margin-bottom: 4.6rem;
+  }
 }
 .page--crew .crew__dot {
   padding: 0.5rem;
@@ -70,4 +130,27 @@ $imgpath: '/../starter-code/assets/crew/';
 .crew__description {
   // opacity: 0;
   transition: all 260ms ease;
+  // padding: 0 11.6rem;
+}
+
+// had to set padding manually to get the text looking like the design
+.crew__text--douglas {
+  @include devices(tablet) {
+    padding: 0 11.6rem;
+  }
+}
+.crew__text--mark {
+  @include devices(tablet) {
+    padding: 0 8.4rem;
+  }
+}
+.crew__text--victor {
+  @include devices(tablet) {
+    padding: 0 4.9rem;
+  }
+}
+.crew__text--anousheh {
+  @include devices(tablet) {
+    padding: 0 7.7rem;
+  }
 }
