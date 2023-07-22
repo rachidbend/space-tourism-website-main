@@ -1,20 +1,55 @@
 $imgpathTechnology: '/../starter-code/assets/technology/';
+@mixin devices($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 680px) {
+      @content;
+    }
+  }
 
+  @if $breakpoint == tablet {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 1440px) {
+      @content;
+    }
+  }
+}
 .page--technology {
   background: url(#{$imgpathTechnology}background-technology-mobile.jpg)
     no-repeat;
   background-size: cover;
 
+  @include devices(tablet) {
+    background: url(#{$imgpathTechnology}background-technology-tablet.jpg)
+      no-repeat;
+    background-size: cover;
+  }
+
   .heading--fifth {
     color: var(--color-white);
     padding-top: 0.2rem;
     margin-bottom: 3.3rem;
+    @include devices(tablet) {
+      text-align: left;
+      margin-bottom: 6.3rem;
+    }
   }
   .hero {
     padding-top: 0;
+    @include devices(tablet) {
+      padding: 3.9rem;
+      padding-bottom: 0;
+      padding-top: 4rem;
+    }
   }
   .heading--number {
     margin-right: 0.8rem;
+  }
+  @include devices(tablet) {
+    margin-right: 0.6rem;
   }
 }
 
