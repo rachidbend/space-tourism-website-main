@@ -107,7 +107,7 @@ const allPlanetLinks = document.querySelectorAll('.planet__link');
 document.querySelector('.planet__image--active').style.display = 'inline-block';
 document.querySelector('.planet__description--active').style.display =
   'inline-block';
-document.querySelector('.planet__info--active').style.display = 'inline-block';
+document.querySelector('.planet__info--active').style.display = 'flex';
 
 allPlanetCtrl.forEach(ctrl => {
   ctrl.addEventListener('click', e => {

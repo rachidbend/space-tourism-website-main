@@ -81,6 +81,8 @@
 
   @include devices(tablet) {
     font-size: 8rem;
+    padding-bottom: 0;
+    margin-bottom: 0.8rem;
   }
 }
 .heading--tertiary {
