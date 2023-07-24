@@ -227,6 +227,7 @@ allTechnologyImages[2].style.transform = 'translateX(200%)';
 
 technologyControls.forEach((ctrl, ctrlIndex) => {
   ctrl.addEventListener('click', e => {
+    e.preventDefault();
     let currActive = 0;
     technologyControls.forEach((inneCrtrl, innerCtrlIndex) => {
       inneCrtrl.classList.contains('technology__dot--active')

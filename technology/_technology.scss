@@ -34,37 +34,49 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
     margin-bottom: 3.3rem;
     @include devices(tablet) {
       text-align: left;
-      margin-bottom: 6.3rem;
+      margin-bottom: 6.2rem;
     }
   }
   .hero {
     padding-top: 0;
     @include devices(tablet) {
       padding: 3.9rem;
-      padding-bottom: 0;
+      padding-bottom: 9.7rem;
       padding-top: 4rem;
     }
   }
   .heading--number {
     margin-right: 0.8rem;
-  }
-  @include devices(tablet) {
-    margin-right: 0.6rem;
+
+    @include devices(tablet) {
+      margin-right: 0.6rem;
+    }
   }
 }
 
 .technology__img {
   margin: 0 -2.6rem;
   margin-bottom: 3.4rem;
-  // object-fit: cover;
+
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   position: relative;
   // comes from the aspect ration of the image
   height: calc(100vw / 2.2);
+  @include devices(tablet) {
+    height: calc(100vw / 2.44);
+    // height: 31rem;
+    margin-bottom: 5.6rem;
+  }
   img {
     width: 111.14%;
+
+    @include devices(tablet) {
+      width: 104.72%;
+      // width: 104.72%;
+      // height: 31rem;
+    }
   }
 }
 
@@ -73,16 +85,15 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   position: absolute;
 }
 
-/* to make sure the image doesn't overflow and make the page wider */
-.hero {
-  // overflow-x: hidden;
-}
-
 .technology__choose {
   display: flex;
   justify-content: center;
   gap: 1.6rem;
   margin-bottom: 2.7rem;
+
+  @include devices(tablet) {
+    margin-bottom: 4.5rem;
+  }
 }
 
 .technology__dot {
@@ -90,14 +101,22 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   width: 4rem;
   border-radius: 50%;
   border: 0.1rem solid rgba(255, 255, 255, 0.25);
-  text-align: center;
-  vertical-align: middle;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   font-size: 1.6rem;
   font-family: 'Bellefair', sans-serif;
   font-weight: 400;
   color: var(--color-white);
   transition: border-color 250ms ease-in-out;
+
+  @include devices(tablet) {
+    font-size: 2.4rem;
+    height: 6rem;
+    width: 6rem;
+  }
 }
 
 .technology__dot:hover {
@@ -110,9 +129,13 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   color: #000;
 }
 
-.technolog__description {
+.technology__description {
   // opacity: 1;
   transition: all 280ms ease-in-out;
+
+  @include devices(tablet) {
+    padding: 0 11.5rem;
+  }
 }
 
 .desc__hide {
