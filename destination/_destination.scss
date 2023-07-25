@@ -143,10 +143,15 @@ $imgpath: '/../starter-code/assets/destination/';
   position: relative;
   visibility: visible;
   opacity: 1;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  gap: 0rem;
   @include devices(tablet) {
     display: flex;
     justify-content: center;
     gap: 10rem;
+    flex-direction: row;
   }
 }
 
