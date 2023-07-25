@@ -104,6 +104,9 @@
     padding-bottom: 0;
     margin-bottom: 0.8rem;
   }
+  @include devices(laptop) {
+    font-size: 10rem;
+  }
 }
 .heading--tertiary {
   font-size: 2.4rem;

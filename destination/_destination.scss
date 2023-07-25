@@ -11,7 +11,7 @@ $imgpath: '/../starter-code/assets/destination/';
       @content;
     }
   }
-  @if $breakpoint == desktop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -25,12 +25,21 @@ $imgpath: '/../starter-code/assets/destination/';
     background: url(#{$imgpath}background-destination-tablet.jpg) no-repeat;
     background-size: cover;
   }
+  @include devices(laptop) {
+    background: url(#{$imgpath}background-destination-desktop.jpg) no-repeat;
+    background-size: cover;
+  }
   .hero {
     padding-top: 0;
 
     @include devices(tablet) {
       padding: 3.9rem;
       padding-bottom: 2.9rem;
+    }
+    @include devices(laptop) {
+      padding: 16.5rem;
+      padding-top: 3.9rem;
+      padding-bottom: 0;
     }
   }
   .heading--fifth {
@@ -49,6 +58,12 @@ $imgpath: '/../starter-code/assets/destination/';
   @include devices(tablet) {
     padding: 0 5.9rem;
   }
+  @include devices(laptop) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0 15.7rem;
+  }
 }
 
 .heading--number {
@@ -64,6 +79,10 @@ $imgpath: '/../starter-code/assets/destination/';
     margin-bottom: 5.1rem;
     width: 30rem;
   }
+  @include devices(laptop) {
+    width: 44.5rem;
+    grid-row: 1 / -1;
+  }
 }
 
 .planet__list {
@@ -76,6 +95,9 @@ $imgpath: '/../starter-code/assets/destination/';
   @include devices(tablet) {
     gap: 3.3rem;
     margin-bottom: 4.7rem;
+  }
+  @include devices(laptop) {
+    justify-content: start;
   }
 }
 
@@ -95,6 +117,9 @@ $imgpath: '/../starter-code/assets/destination/';
   opacity: 1;
   @include devices(tablet) {
     width: 30rem;
+  }
+  @include devices(laptop) {
+    width: 44.5rem;
   }
 }
 
@@ -147,10 +172,17 @@ $imgpath: '/../starter-code/assets/destination/';
   justify-content: start;
   flex-direction: column;
   gap: 0rem;
+
   @include devices(tablet) {
     display: flex;
     justify-content: center;
     gap: 10rem;
+    flex-direction: row;
+  }
+  @include devices(laptop) {
+    justify-content: start;
+    display: flex;
+
     flex-direction: row;
   }
 }

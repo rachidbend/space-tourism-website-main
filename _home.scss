@@ -35,9 +35,11 @@ $imgpath: '/starter-code/assets/home/';
 .home__container {
   @include devices(laptop) {
     display: flex;
+    // width: 111rem;
+    margin: 0 auto;
     padding: 16.5rem;
-    padding-top: 25.4rem;
     padding-bottom: 0rem;
+    padding-top: 25.4rem;
     gap: 38.6rem;
   }
 }
