@@ -11,7 +11,7 @@ $imgpath: '/starter-code/assets/home/';
       @content;
     }
   }
-  @if $breakpoint == desktop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -26,9 +26,19 @@ $imgpath: '/starter-code/assets/home/';
     background: url(#{$imgpath}background-home-tablet.jpg) no-repeat;
     background-size: cover;
   }
-  @include devices(desktop) {
+  @include devices(laptop) {
     background: url(#{$imgpath}background-home-desktop.jpg) no-repeat;
     background-size: cover;
+  }
+}
+
+.home__container {
+  @include devices(laptop) {
+    display: flex;
+    padding: 16.5rem;
+    padding-top: 25.4rem;
+    padding-bottom: 0rem;
+    gap: 38.6rem;
   }
 }
 
@@ -44,6 +54,13 @@ $imgpath: '/starter-code/assets/home/';
     padding-top: 10.8rem;
     padding-bottom: 15.6rem;
   }
+
+  @include devices(laptop) {
+    padding: 0rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    text-align: left;
+  }
 }
 
 .explore {
@@ -51,6 +68,10 @@ $imgpath: '/starter-code/assets/home/';
   @include devices(tablet) {
     // padding here instead of margin bottom in the explore link to stretch the body to have the background visible
     padding-bottom: 9rem;
+  }
+  @include devices(laptop) {
+    padding-bottom: 0rem;
+    align-self: end;
   }
 }
 
@@ -80,6 +101,14 @@ $imgpath: '/starter-code/assets/home/';
     margin-top: 0;
     letter-spacing: 0.2rem;
   }
+
+  @include devices(laptop) {
+    font-size: 3.2rem;
+    height: 27.4rem;
+    width: 27.4rem;
+    margin-top: 0;
+    letter-spacing: 0.2rem;
+  }
 }
 
 // to get the explore text in the perfect position
@@ -101,6 +130,11 @@ $imgpath: '/starter-code/assets/home/';
   opacity: 0.1;
   transition: transform 300ms ease-in-out;
   z-index: 99;
+
+  @include devices(laptop) {
+    height: 45rem;
+    width: 45rem;
+  }
 }
 
 .link--explore:hover::before {

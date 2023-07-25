@@ -32,7 +32,8 @@ font-family: 'Barlow', serif;
       @content;
     }
   }
-  @if $breakpoint == desktop {
+
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -97,6 +98,11 @@ img {
     align-items: flex-start;
     padding-bottom: 0;
   }
+  @include devices(laptop) {
+    padding: 4rem 5.5rem;
+    align-items: center;
+    padding-bottom: 0;
+  }
 }
 .logo {
   width: 4rem;
@@ -109,6 +115,7 @@ img {
 }
 
 .nav {
+  position: relative;
   display: inline-block;
   top: 0;
   right: 0;
@@ -128,6 +135,12 @@ img {
     margin-top: -2.4rem;
     margin-right: -3.9rem;
   }
+
+  @include devices(laptop) {
+    margin-top: 0;
+    margin-right: -5.5rem;
+    overflow: visible;
+  }
 }
 
 .nav__list {
@@ -144,12 +157,36 @@ img {
     padding-bottom: 0;
     align-items: baseline;
   }
+  @include devices(laptop) {
+    //  12.3rem 16.5rem
+    padding: 4rem 16.5rem 0 12.3rem;
+    display: flex;
+    gap: 4.8rem;
+    // padding-bottom: 0;
+    align-items: baseline;
+  }
 }
 
 .active {
   width: 25.4rem;
 }
 
+// this line only shows in the laptop view and above
+.header__line {
+  display: none;
+  @include devices(laptop) {
+    display: inline-block;
+    height: 1px;
+    // width: 32.8472222vw;
+    min-width: 47.3rem;
+    background-color: var(--color-white);
+    opacity: 25.15%;
+    position: absolute;
+    top: 50%;
+    left: -44.3rem;
+    // left: calc(2.08333333vw - 32.8472222vw);
+  }
+}
 .nav__open {
   z-index: 2000;
   width: 2.4rem;

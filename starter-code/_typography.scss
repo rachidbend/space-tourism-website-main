@@ -14,7 +14,7 @@
       @content;
     }
   }
-  @if $breakpoint == desktop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -38,14 +38,31 @@
     font-size: 1.4rem;
     padding-bottom: 3.7rem;
   }
+  @include devices(laptop) {
+    font-size: 1.6rem;
+    padding-bottom: 3.5rem;
+  }
 }
+
 .nav__link--number {
   font-weight: bold;
   margin-right: 0.4rem;
   @include devices(tablet) {
     display: none;
   }
+  @include devices(laptop) {
+    display: inline-block;
+  }
 }
+
+// these two are for adjusting the locations of these two to get them as close to the design as possible
+.nav__item:nth-child(2) {
+  margin-right: 5px;
+}
+.nav__item:nth-child(2) .nav__link--number {
+  margin-right: 6px;
+}
+
 .text {
   color: var(--color-blue-light);
   font-size: 1.5rem;
@@ -71,6 +88,9 @@
   @include devices(tablet) {
     font-size: 15rem;
     margin-bottom: 0.4rem;
+  }
+  @include devices(laptop) {
+    margin-bottom: 1.5rem;
   }
 }
 .heading--secondary {
@@ -126,6 +146,11 @@
     letter-spacing: 0.338rem;
     margin-bottom: 0.7rem;
   }
+  @include devices(laptop) {
+    font-size: 2.8rem;
+    letter-spacing: 0.472rem;
+    margin-bottom: 1.9rem;
+  }
 }
 
 .page--home .heading--fifth {
@@ -133,6 +158,9 @@
 
   @include devices(tablet) {
     transform: translateX(2px);
+  }
+  @include devices(laptop) {
+    transform: translateX(0px);
   }
 }
 
@@ -208,6 +236,10 @@
   @include devices(tablet) {
     font-size: 1.6rem;
     line-height: 2.8rem;
+  }
+  @include devices(laptop) {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
   }
 }
 
