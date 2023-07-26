@@ -106,6 +106,7 @@
   }
   @include devices(laptop) {
     font-size: 10rem;
+    margin-bottom: 1.4rem;
   }
 }
 .heading--tertiary {
@@ -169,6 +170,11 @@
 
 .heading--number {
   margin-right: 1.6rem;
+
+  @include devices(laptop) {
+    margin-right: 2.6rem;
+    font-weight: bold;
+  }
 }
 .heading--sixth {
   font-size: 1.4rem;
