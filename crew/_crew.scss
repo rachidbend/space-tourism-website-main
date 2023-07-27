@@ -11,7 +11,7 @@ $imgpath: '/../starter-code/assets/crew/';
       @content;
     }
   }
-  @if $breakpoint == desktop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -26,6 +26,11 @@ $imgpath: '/../starter-code/assets/crew/';
     background: url(#{$imgpath}background-crew-tablet.jpg) no-repeat;
     background-size: cover;
   }
+  @include devices(laptop) {
+    background: url(#{$imgpath}background-crew-desktop.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
 
   .hero {
     padding-top: 0;
@@ -33,6 +38,11 @@ $imgpath: '/../starter-code/assets/crew/';
       padding: 3.9rem;
       padding-bottom: 0;
       padding-top: 4rem;
+    }
+    @include devices(laptop) {
+      padding: 16.5rem;
+      padding-top: 7.6rem;
+      padding-bottom: 0;
     }
   }
   .heading--fifth {
@@ -43,6 +53,9 @@ $imgpath: '/../starter-code/assets/crew/';
       text-align: left;
       margin-bottom: 6.3rem;
     }
+    @include devices(laptop) {
+      margin-bottom: 15.9rem;
+    }
   }
   .heading--number {
     margin-right: 0.8rem;
@@ -50,8 +63,12 @@ $imgpath: '/../starter-code/assets/crew/';
     @include devices(tablet) {
       margin-right: 0.6rem;
     }
+    @include devices(laptop) {
+      margin-right: 2.2rem;
+    }
   }
 }
+// //////////////
 .crew {
   @include devices(tablet) {
     // padding: 0 11.6rem;
@@ -75,6 +92,47 @@ $imgpath: '/../starter-code/assets/crew/';
     margin-bottom: 0rem;
     border: none;
   }
+
+  @include devices(laptop) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: auto;
+  }
+
+  // positioning the crew images
+  .crew__image--1 {
+    @include devices(laptop) {
+      position: absolute;
+      bottom: -2.6rem;
+      right: 14.3rem;
+      height: 70rem;
+    }
+  }
+  .crew__image--2 {
+    @include devices(laptop) {
+      position: absolute;
+      bottom: -3.6rem;
+      right: 19.6rem;
+      height: 66rem;
+    }
+  }
+  .crew__image--3 {
+    @include devices(laptop) {
+      position: absolute;
+      bottom: -2.6rem;
+      right: 14.2rem;
+      height: 64.5rem;
+    }
+  }
+  .crew__image--4 {
+    @include devices(laptop) {
+      position: absolute;
+      bottom: -2.6rem;
+      right: 11.8rem;
+      height: 60.2rem;
+    }
+  }
 }
 .crew__img img {
   height: 100%;
@@ -96,6 +154,12 @@ $imgpath: '/../starter-code/assets/crew/';
     grid-row: 2;
     margin-bottom: 4.6rem;
   }
+  @include devices(laptop) {
+    justify-content: start;
+    transform: translateX(-3px);
+    margin-bottom: 0;
+    gap: 1.4rem;
+  }
 }
 .page--crew .crew__dot {
   padding: 0.5rem;
@@ -107,6 +171,11 @@ $imgpath: '/../starter-code/assets/crew/';
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1744);
   transition: background 260ms ease-in-out;
+
+  @include devices(laptop) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 }
 
 .page--crew .crew__dot--active span {
@@ -138,19 +207,32 @@ $imgpath: '/../starter-code/assets/crew/';
   @include devices(tablet) {
     padding: 0 11.6rem;
   }
+  @include devices(laptop) {
+    padding: 0;
+  }
 }
 .crew__text--mark {
   @include devices(tablet) {
     padding: 0 8.4rem;
   }
+  @include devices(laptop) {
+    padding: 0;
+  }
 }
 .crew__text--victor {
   @include devices(tablet) {
     padding: 0 4.9rem;
+    margin-bottom: 8.3rem;
+  }
+  @include devices(laptop) {
+    padding: 0;
   }
 }
 .crew__text--anousheh {
   @include devices(tablet) {
     padding: 0 7.7rem;
+  }
+  @include devices(laptop) {
+    padding: 0;
   }
 }

@@ -119,6 +119,10 @@
     font-size: 4rem;
     margin-bottom: 1.6rem;
   }
+  @include devices(laptop) {
+    font-size: 5.6rem;
+    margin-bottom: 2.5rem;
+  }
 }
 .heading--fourth {
   color: var(--color-white);
@@ -133,6 +137,10 @@
   @include devices(tablet) {
     font-size: 2.4rem;
     margin-bottom: 0.7rem;
+  }
+  @include devices(laptop) {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
   }
 }
 .heading--fifth {
@@ -254,6 +262,13 @@
 
 .crew__text {
   margin-bottom: 3.5rem;
+  @include devices(laptop) {
+    margin-bottom: 0em;
+    width: 44.4rem;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 11.5rem;
+  }
 }
 
 // .crew__text {
