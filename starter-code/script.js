@@ -136,7 +136,8 @@ allPlanetCtrl.forEach(ctrl => {
           document
             .querySelector(`.planet__${section}--${getClass}`)
             .classList.add(`planet__${section}--active`);
-          el.style.display = 'inline-block';
+          if (section === 'info') el.style.display = 'flex';
+          else el.style.display = 'inline-block';
         }, 450);
       });
     };
