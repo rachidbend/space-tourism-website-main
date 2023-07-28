@@ -17,6 +17,22 @@ allBtn?.forEach(btn => {
   });
 });
 
+// close nav when it is open and the outside of it is clicked
+document.querySelector('body').addEventListener('click', e => {
+  let navActive = false;
+  allNav.forEach(nav => {
+    nav.classList.contains('active') ? (navActive = true) : (navActive = false);
+  });
+  if (e.target.closest('.nav')) return;
+  if (e.target.closest('.nav__open')) return;
+  if (!navActive) return;
+
+  // toggle the 'active' class on the nav to open or close it
+  allNav.forEach(nav => nav.classList.toggle('active'));
+  // toggle the 'close' class to change the burger menu icon
+  allBtn.forEach(btn => btn.classList.toggle('close'));
+});
+
 // Get the page links
 const homePageLink = document.querySelector('.link--home');
 const destinationPageLink = document.querySelector('.link--destination');
