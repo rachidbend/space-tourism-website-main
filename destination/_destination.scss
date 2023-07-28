@@ -1,22 +1,6 @@
 $imgpath: '/../starter-code/assets/destination/';
-@mixin devices($breakpoint) {
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: 680px) {
-      @content;
-    }
-  }
+@import '../mixins';
 
-  @if $breakpoint == tablet {
-    @media only screen and (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == laptop {
-    @media only screen and (min-width: 1440px) {
-      @content;
-    }
-  }
-}
 .page--destination {
   background: url(#{$imgpath}background-destination-mobile.jpg) no-repeat;
   background-size: cover;
@@ -41,6 +25,11 @@ $imgpath: '/../starter-code/assets/destination/';
       padding-top: 7.6rem;
       padding-bottom: 0;
     }
+    // @include devices(laptop-large) {
+    //   padding: 0 30rem;
+    //   padding-top: 7.6rem;
+    //   padding-bottom: 0rem;
+    // }
   }
   .heading--fifth {
     color: var(--color-white);

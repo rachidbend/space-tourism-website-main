@@ -1,22 +1,5 @@
 $imgpathTechnology: '/../starter-code/assets/technology/';
-@mixin devices($breakpoint) {
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: 680px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tablet {
-    @media only screen and (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == laptop {
-    @media only screen and (min-width: 1440px) {
-      @content;
-    }
-  }
-}
+@import '../mixins';
 .page--technology {
   background: url(#{$imgpathTechnology}background-technology-mobile.jpg)
     no-repeat;

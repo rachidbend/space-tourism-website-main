@@ -1,22 +1,5 @@
 $imgpath: '/../starter-code/assets/crew/';
-@mixin devices($breakpoint) {
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: 680px) {
-      @content;
-    }
-  }
-
-  @if $breakpoint == tablet {
-    @media only screen and (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == laptop {
-    @media only screen and (min-width: 1440px) {
-      @content;
-    }
-  }
-}
+@import '../mixins';
 
 .page--crew {
   background: url(#{$imgpath}background-crew-mobile.jpg) no-repeat;
@@ -44,6 +27,11 @@ $imgpath: '/../starter-code/assets/crew/';
       padding-top: 7.6rem;
       padding-bottom: 0;
     }
+    // @include devices(laptop-large) {
+    //   padding: 30rem;
+    //   padding-top: 7.6rem;
+    //   padding-bottom: 0;
+    // }
   }
   .heading--fifth {
     color: var(--color-white);
@@ -55,6 +43,10 @@ $imgpath: '/../starter-code/assets/crew/';
     }
     @include devices(laptop) {
       margin-bottom: 15.9rem;
+      // 8rem
+    }
+    @include devices(laptop-large) {
+      margin-bottom: 8rem;
     }
   }
   .heading--number {
@@ -108,6 +100,9 @@ $imgpath: '/../starter-code/assets/crew/';
       right: 14.3rem;
       height: 70rem;
     }
+    // @include devices(laptop-large) {
+    //   right: 27rem;
+    // }
   }
   .crew__image--2 {
     @include devices(laptop) {
@@ -116,6 +111,9 @@ $imgpath: '/../starter-code/assets/crew/';
       right: 19.6rem;
       height: 66rem;
     }
+    // @include devices(laptop-large) {
+    //   right: 30rem;
+    // }
   }
   .crew__image--3 {
     @include devices(laptop) {
@@ -124,6 +122,9 @@ $imgpath: '/../starter-code/assets/crew/';
       right: 14.2rem;
       height: 64.5rem;
     }
+    // @include devices(laptop-large) {
+    //   right: 27rem;
+    // }
   }
   .crew__image--4 {
     @include devices(laptop) {
@@ -132,6 +133,9 @@ $imgpath: '/../starter-code/assets/crew/';
       right: 11.8rem;
       height: 60.2rem;
     }
+    // @include devices(laptop-large) {
+    //   right: 24rem;
+    // }
   }
 }
 .crew__img img {
@@ -226,6 +230,9 @@ $imgpath: '/../starter-code/assets/crew/';
   }
   @include devices(laptop) {
     padding: 0;
+  }
+  @include devices(laptop-large) {
+    margin-bottom: 4.84rem;
   }
 }
 .crew__text--anousheh {

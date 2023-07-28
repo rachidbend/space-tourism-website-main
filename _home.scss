@@ -1,22 +1,6 @@
 $imgpath: '/starter-code/assets/home/';
-@mixin devices($breakpoint) {
-  @if $breakpoint == mobile {
-    @media only screen and (min-width: 680px) {
-      @content;
-    }
-  }
 
-  @if $breakpoint == tablet {
-    @media only screen and (min-width: 768px) {
-      @content;
-    }
-  }
-  @if $breakpoint == laptop {
-    @media only screen and (min-width: 1440px) {
-      @content;
-    }
-  }
-}
+@import './mixins';
 
 .page--home {
   background: url(#{$imgpath}background-home-mobile.jpg) no-repeat;
@@ -35,12 +19,16 @@ $imgpath: '/starter-code/assets/home/';
 .home__container {
   @include devices(laptop) {
     display: flex;
-    // width: 111rem;
+    justify-content: space-between;
     margin: 0 auto;
     padding: 16.5rem;
     padding-bottom: 0rem;
     padding-top: 25.4rem;
-    gap: 38.6rem;
+  }
+  @include devices(laptop-large) {
+    padding: 0 26rem;
+    padding-top: 15.4rem;
+    padding-bottom: 0rem;
   }
 }
 
@@ -62,6 +50,15 @@ $imgpath: '/starter-code/assets/home/';
     padding-top: 0rem;
     padding-bottom: 0rem;
     text-align: left;
+  }
+
+  &__text {
+    @include devices(laptop) {
+      width: 45rem;
+    }
+    @include devices(laptop-large) {
+      width: 60rem;
+    }
   }
 }
 
