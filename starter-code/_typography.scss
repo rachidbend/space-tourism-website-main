@@ -199,6 +199,11 @@
     transform: translateX(4px);
     letter-spacing: 0.27rem;
   }
+
+  @include devices(laptop) {
+    transform: translateX(0px);
+    margin-bottom: 1.2rem;
+  }
 }
 
 .planet__link {
@@ -272,14 +277,6 @@
 }
 
 // .crew__text {
-//   font-family: var(--type--barlow);
-//   font-size: 1.5rem;
-//   color: var(--color-blue-light);
-//   letter-spacing: 0;
-//   line-height: 2.5rem;
-// }
-
-// .technology__text {
 //   font-family: var(--type--barlow);
 //   font-size: 1.5rem;
 //   color: var(--color-blue-light);

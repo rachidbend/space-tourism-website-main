@@ -11,7 +11,7 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
       @content;
     }
   }
-  @if $breakpoint == desktop {
+  @if $breakpoint == laptop {
     @media only screen and (min-width: 1440px) {
       @content;
     }
@@ -27,6 +27,11 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
       no-repeat;
     background-size: cover;
   }
+  @include devices(laptop) {
+    background: url(#{$imgpathTechnology}background-technology-desktop.jpg)
+      no-repeat;
+    background-size: cover;
+  }
 
   .heading--fifth {
     color: var(--color-white);
@@ -36,6 +41,14 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
       text-align: left;
       margin-bottom: 6.2rem;
     }
+    @include devices(laptop) {
+      margin-bottom: 3rem;
+    }
+  }
+  .heading--tertiary {
+    @include devices(laptop) {
+      margin-bottom: 1.6rem;
+    }
   }
   .hero {
     padding-top: 0;
@@ -44,13 +57,29 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
       padding-bottom: 9.7rem;
       padding-top: 4rem;
     }
+    @include devices(laptop) {
+      padding: 16.5rem;
+      padding-top: 7.6rem;
+      padding-bottom: 0;
+    }
   }
   .heading--number {
-    margin-right: 0.8rem;
+    margin-right: 2.2rem;
 
     @include devices(tablet) {
       margin-right: 0.6rem;
     }
+    @include devices(tablet) {
+      margin-right: 2.2rem;
+    }
+  }
+}
+
+.technology {
+  @include devices(laptop) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
   }
 }
 
@@ -58,24 +87,51 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   margin: 0 -2.6rem;
   margin-bottom: 3.4rem;
 
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+  // display: flex;
+  // flex-wrap: nowrap;
+  // justify-content: center;
   position: relative;
   // comes from the aspect ration of the image
   height: calc(100vw / 2.2);
   @include devices(tablet) {
+    margin: 0 -3.9rem;
     height: calc(100vw / 2.44);
-    // height: 31rem;
+
     margin-bottom: 5.6rem;
+  }
+  @include devices(laptop) {
+    margin: 0;
+    height: 52.7rem;
+    width: 51.5rem;
+    grid-row: 1 / -1;
+    grid-column: 3/ 4;
+    overflow: hidden;
+    margin-right: -16.5rem;
   }
   img {
     width: 111.14%;
 
     @include devices(tablet) {
       width: 104.72%;
-      // width: 104.72%;
-      // height: 31rem;
+    }
+    @include devices(laptop) {
+      width: 100%;
+    }
+  }
+  picture {
+    width: 111.14%;
+    display: flex;
+    object-fit: contain;
+
+    @include devices(tablet) {
+      width: 104.72%;
+    }
+
+    source {
+      display: none;
+      @include devices(laptop) {
+        display: inline-block;
+      }
     }
   }
 }
@@ -93,6 +149,13 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 
   @include devices(tablet) {
     margin-bottom: 4.5rem;
+  }
+  @include devices(laptop) {
+    margin: 0;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 11.1rem;
+    gap: 3.2rem;
   }
 }
 
@@ -117,6 +180,12 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
     height: 6rem;
     width: 6rem;
   }
+  @include devices(laptop) {
+    width: 8rem;
+    height: 8rem;
+    font-size: 3.2rem;
+    letter-spacing: 0.2rem;
+  }
 }
 
 .technology__dot:hover {
@@ -136,8 +205,17 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
   @include devices(tablet) {
     padding: 0 11.5rem;
   }
+  @include devices(laptop) {
+    padding: 0;
+    margin-top: 11.1rem;
+    padding-left: 8rem;
+  }
 }
-
+.technology__text {
+  @include devices(laptop) {
+    padding-right: 15.5rem;
+  }
+}
 .desc__hide {
   display: none;
   transition: all 280ms;
@@ -146,4 +224,9 @@ $imgpathTechnology: '/../starter-code/assets/technology/';
 .technology__fadeout {
   opacity: 0;
   transition: all 280ms;
+}
+
+picture {
+  height: auto;
+  width: auto;
 }

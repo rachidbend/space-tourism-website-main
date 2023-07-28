@@ -270,7 +270,7 @@
       </main>
     </div>
     <!-- CREW PAGE -->
-    <div class="page page--crew">
+    <div class="page page--crew hide">
       <header class="header">
         <img
           src="starter-code/assets/Logo-desktop.svg"
@@ -390,7 +390,7 @@
       </main>
     </div>
     <!-- TECHNOLOGY PAGE -->
-    <div class="page page--technology hide">
+    <div class="page page--technology">
       <header class="header">
         <img
           src="../starter-code/assets/Logo-desktop.svg"
@@ -434,21 +434,45 @@
         </h5>
         <div class="technology">
           <div class="technology__img">
-            <img
-              src="starter-code/assets/technology/image-launch-vehicle-landscape.jpg"
-              alt=""
-              class="technology__image--1 technology__image technology__img--curr"
-            />
-            <img
-              src="starter-code/assets/technology/image-spaceport-landscape.jpg"
-              alt=""
-              class="technology__image--2 technology__image technology__img--next"
-            />
-            <img
-              src="starter-code/assets/technology/image-space-capsule-landscape.jpg"
-              alt=""
-              class="technology__image--3 technology__image technology__img--prev"
-            />
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  starter-code/assets/technology/image-launch-vehicle-portrait.jpg
+                "
+              />
+              <img
+                src="starter-code/assets/technology/image-launch-vehicle-landscape.jpg"
+                alt=""
+                class="technology__image--1 technology__image technology__img--curr"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  starter-code/assets/technology/image-spaceport-portrait.jpg
+                "
+              />
+              <img
+                src="starter-code/assets/technology/image-spaceport-landscape.jpg"
+                alt=""
+                class="technology__image--2 technology__image technology__img--next"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1440px)"
+                srcset="
+                  starter-code/assets/technology/image-space-capsule-portrait.jpg
+                "
+              />
+              <img
+                src="starter-code/assets/technology/image-space-capsule-landscape.jpg"
+                alt=""
+                class="technology__image--3 technology__image technology__img--prev"
+              />
+            </picture>
           </div>
           <div class="technology__choose">
             <button class="technology__dot technology__dot--active">1</button>
@@ -463,7 +487,7 @@
               used to carry a payload from Earth's surface to space, usually to
               Earth orbit or beyond. Our WEB-X carrier rocket is the most
               powerful in operation. Standing 150 metres tall, it's quite an
-              awe-inspiring sight on the launch
+              awe-inspiring sight on the launch pad!
             </p>
           </div>
           <div class="technology__description desc__hide">
