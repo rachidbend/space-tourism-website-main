@@ -4,11 +4,23 @@
   "description": "![Design preview for the Space tourism website coding challenge](./preview.jpg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:sass": "sass --watch main.scss:css/style.css",
+    "compile:sass": "sass main.scss:dist/style.comp.css",
+    "prefix:css": "postcss dist/style.comp.css --use autoprefixer -o dist/style.prefix.css",
+    "compress:css": "node-sass dist/style.prefix.css dist/style.css --output-style compressed",
+    "build": "npm-run-all compile:sass prefix:css compress:css"
   },
+  "browserslist": "last 4 versions",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "node-sass": "^9.0.0",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.64.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0"
   }
 }

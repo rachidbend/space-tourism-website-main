@@ -2,38 +2,55 @@
 
 // because there are many nav componentes in each page, and because we change the intire page with the nav instead of changing the contetn and leaving the nav (which i will do anothher time) we endup having to select multiple nav elements and applying the same thing to them all to stay consistent
 
+// ******************************************
+//                NAVIGATION
+// ******************************************
 // Get the navigation elements
 const allNav = document.querySelectorAll('.nav');
 const allBtn = document.querySelectorAll('.nav__open');
+
+const toggleAllNav = (state = 'toggle') => {
+  if (state === 'toggle') allNav.forEach(nav => nav.classList.toggle('active'));
+  if (state === 'add') allNav.forEach(nav => nav.classList.add('active'));
+  if (state === 'remove') allNav.forEach(nav => nav.classList.remove('active'));
+};
+const toggleAllNavBtn = (state = 'toggle') => {
+  if (state === 'toggle') allBtn.forEach(nav => nav.classList.toggle('close'));
+  if (state === 'add') allBtn.forEach(nav => nav.classList.add('close'));
+  if (state === 'remove') allBtn.forEach(nav => nav.classList.remove('close'));
+};
 
 // add event listeners to each nav button
 allBtn?.forEach(btn => {
   // get all the nav links, and if one of them is clicked
   btn?.addEventListener('click', e => {
     // toggle the 'active' class on the nav to open or close it
-    allNav.forEach(nav => nav.classList.toggle('active'));
+    toggleAllNav();
     // toggle the 'close' class to change the burger menu icon
-    allBtn.forEach(btn => btn.classList.toggle('close'));
+    toggleAllNavBtn();
   });
 });
 
 // close nav when it is open and the outside of it is clicked
 document.querySelector('body').addEventListener('click', e => {
   let navActive = false;
+  // check if the nav is active
   allNav.forEach(nav => {
     nav.classList.contains('active') ? (navActive = true) : (navActive = false);
   });
+  // if the nav or nav open button are clicked and nav is open
   if (e.target.closest('.nav')) return;
   if (e.target.closest('.nav__open')) return;
   if (!navActive) return;
 
-  // toggle the 'active' class on the nav to open or close it
-  allNav.forEach(nav => nav.classList.toggle('active'));
-  // toggle the 'close' class to change the burger menu icon
-  allBtn.forEach(btn => btn.classList.toggle('close'));
+  // then:
+  // close the nav
+  toggleAllNav();
+  // change the nav button
+  toggleAllNavBtn();
 });
 
-// Get the page links
+// Get the page nav links
 const homePageLink = document.querySelector('.link--home');
 const destinationPageLink = document.querySelector('.link--destination');
 const crewPageLink = document.querySelector('.link--crew');
@@ -71,8 +88,8 @@ const endTransition = () => {
   // wait a bit, then remove the fade in class to be ready for next transition
   document.querySelector('.body').classList.remove('fadein');
   // close the nav at the end
-  allNav.forEach(nav => nav.classList.remove('active'));
-  allBtn.forEach(btn => btn.classList.remove('close'));
+  toggleAllNav('remove');
+  toggleAllNavBtn('remove');
 };
 
 // this function deals with the animation and order of tasks
@@ -101,17 +118,17 @@ linkBtn.forEach(link => {
     // get all pages
     // then get the page to be shown next
     const nextPage = document.querySelector(`.page--${linkClicked}`);
-
+    transitionAnimation(nextPage);
     // remove 'link__active' from all links
     allNavLinks.forEach(btn => btn.classList.remove('link__active'));
     // add the 'link__active' class to the active link to show it's active
     activeLink.forEach(activeLink => activeLink.classList.add('link__active'));
-
-    transitionAnimation(nextPage);
   });
 });
 
-// planet carousel
+// ******************************************
+//          PLANET CAROUSEL SLIDER
+// ******************************************
 
 // get controls
 const allPlanetCtrl = document.querySelectorAll('.planet__link');
@@ -166,9 +183,9 @@ allPlanetCtrl.forEach(ctrl => {
   });
 });
 
-// ********************
-// CREW CAROUSEL SLIDER
-// ********************
+// ******************************************
+//          CREW CAROUSEL SLIDER
+// ******************************************
 
 const crewDots = document.querySelectorAll('.crew__dot');
 const crewImages = document.querySelectorAll('.crew__image');
@@ -228,9 +245,9 @@ crewDots.forEach((dot, index) => {
   });
 });
 
-// **************************
-// TECHNOLOGY CAROUSEL SLIDER
-// **************************
+// ******************************************
+//         TECHNOLOGY CAROUSEL SLIDER
+// ******************************************
 
 // elements and controls
 const allTechnologyImages = document.querySelectorAll('.technology__image');
@@ -238,70 +255,66 @@ const allTechnologyDescriptions = document.querySelectorAll(
   '.technology__description'
 );
 const technologyControls = document.querySelectorAll('.technology__dot');
-allTechnologyImages[0].style.transform = 'translateX(0%)';
-allTechnologyImages[1].style.transform = 'translateX(100%)';
-allTechnologyImages[2].style.transform = 'translateX(200%)';
+
+// set inicial position for images
+allTechnologyImages.forEach((img, index) => {
+  img.style.transform = `translateX(${index * 100}%)`;
+});
+// figure out where each image should be depending on which is requested
+const moveImage = targetImageIndex => {
+  const translatePercentage = targetImageIndex * -100;
+  allTechnologyImages.forEach((img, index) => {
+    img.style.transform = `translateX(${translatePercentage + index * 100}%)`;
+    // ex: if requested images has index 2, then
+    // translatePercentage = 2 * -100, which is -200
+    // so the translateX for index = 2 is: -200 + 2 * 100 which is 0;
+    // and the translateX for index = 1 is: -200 + 1 * 100 which is -100;
+    // so the translateX for index = 3 is: -200 + 3 * 100 which is 100;
+    // hope it explains it
+  });
+};
+// show appropriate description with fade-out and fade-in animations
+const showDescription = ctrlIndex => {
+  allTechnologyDescriptions.forEach((desc, descIndex) => {
+    // start the fadeout
+    desc.classList.add('technology__fadeout');
+    // make sure the opacity becomes 0
+    desc.style.opacity = '0';
+
+    setTimeout(() => {
+      // after 280ms hide all the descriptions then
+      desc.classList.add('desc__hide');
+      // when the requested description is found
+      if (ctrlIndex === descIndex) {
+        setTimeout(() => {
+          // we wait a little then we remove the hide and the fadeout
+          desc.classList.remove('desc__hide');
+          desc.classList.remove('technology__fadeout');
+          // we make sure its displayed as a block with 0 opacity so that the animation would work
+          desc.style.display === 'block';
+          setTimeout(() => {
+            // then we change the opacity to 1 to start the fadein animation
+            desc.style.opacity = '1';
+          }, 50);
+        }, 50);
+      }
+    }, 280);
+  });
+};
 
 technologyControls.forEach((ctrl, ctrlIndex) => {
   ctrl.addEventListener('click', e => {
     e.preventDefault();
-    let currActive = 0;
-    technologyControls.forEach((inneCrtrl, innerCtrlIndex) => {
-      inneCrtrl.classList.contains('technology__dot--active')
-        ? (currActive = innerCtrlIndex)
-        : '';
-    });
-    // console.log(currActive, ctrlIndex);
+
+    // get the index requested and :
+    // change the images acording to it
+    moveImage(ctrlIndex);
     // change active control dot
     technologyControls.forEach((dot, i) => {
       i === ctrlIndex
         ? dot.classList.add('technology__dot--active')
         : dot.classList.remove('technology__dot--active');
     });
-
-    // couldn't figure out a better way of animating the images
-    if (ctrlIndex === 0) {
-      allTechnologyImages[0].style.transform = 'translateX(0%)';
-      allTechnologyImages[1].style.transform = 'translateX(100%)';
-      allTechnologyImages[2].style.transform = 'translateX(200%)';
-    }
-
-    if (ctrlIndex === 1) {
-      allTechnologyImages[0].style.transform = 'translateX(-100%)';
-      allTechnologyImages[1].style.transform = 'translateX(0%)';
-      allTechnologyImages[2].style.transform = 'translateX(100%)';
-    }
-    if (ctrlIndex === 2) {
-      allTechnologyImages[0].style.transform = 'translateX(-200%)';
-      allTechnologyImages[1].style.transform = 'translateX(-100%)';
-      allTechnologyImages[2].style.transform = 'translateX(0%)';
-    }
-    allTechnologyDescriptions.forEach((desc, descIndex) => {
-      // start the fadeout
-      desc.classList.add('technology__fadeout');
-      // make usre the opacity becomes 0
-      desc.style.opacity = '0';
-
-      setTimeout(() => {
-        // after 200ms hide all the descriptions then
-        desc.classList.add('desc__hide');
-        // get the requested description is found
-        if (ctrlIndex === descIndex) {
-          setTimeout(() => {
-            // we wait a little then we remove the hide and the fadeout
-            desc.classList.remove('desc__hide');
-            desc.classList.remove('technology__fadeout');
-            // we make sure its displayed as a block with 0 opacity so that the animation would work
-            desc.style.display === 'block';
-            // we make sure the animation is applied
-            desc.style.transition = '280ms ease-in-out';
-            setTimeout(() => {
-              // then we change the opacity to 1 to start the fadein animation
-              desc.style.opacity = '1';
-            }, 50);
-          }, 50);
-        }
-      }, 280);
-    });
+    showDescription(ctrlIndex);
   });
 });

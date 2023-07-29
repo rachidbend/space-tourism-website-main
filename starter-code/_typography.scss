@@ -3,6 +3,20 @@
 // --type--barlow
 // --type--bellefair
 @import '../mixins';
+:root {
+  /* COLORS */
+  --color-white: #ffffff;
+  --color-blue-light: #d0d6f9;
+  // --color-blue-light: #d2d8f9;
+
+  --color-blue-dark: #0c0e18;
+  --color-gray: #979797;
+
+  // font family
+  --type--barlow-condensed: 'Barlow Condensed', sans-serif;
+  --type--barlow: 'Barlow', sans-serif;
+  --type--bellefair: 'Bellefair', sans-serif;
+}
 
 .nav__link {
   display: inline-block;
@@ -22,11 +36,17 @@
     font-size: 1.4rem;
     padding-bottom: 3.7rem;
   }
-  @include devices(small-laptop) {
-  }
+
   @include devices(laptop) {
     font-size: 1.6rem;
     padding-bottom: 3.5rem;
+    transition: border-color 260ms ease-in-out;
+    border-bottom: 0.3rem solid rgba(255, 255, 255, 0);
+
+    &:hover {
+      // 0.5021478533744812
+      border-bottom: 0.3rem solid rgba(255, 255, 255, 0.5);
+    }
   }
 }
 
