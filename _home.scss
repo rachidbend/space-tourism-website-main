@@ -133,6 +133,7 @@ $imgpath: '/starter-code/assets/home/';
   @include devices(laptop) {
     height: 45rem;
     width: 45rem;
+    transform: scale(60%);
   }
 }
 
